@@ -1,24 +1,3 @@
-# README
+This is a new project that I will focus on test driven development with. I aim to add an api to this project at some point and time, as well as broaden my understanding of devise, rspec, and HTML/CSS. I'll build on my HTML/CSS skills by designing the frontend and not using bootstrap.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+💪😎
