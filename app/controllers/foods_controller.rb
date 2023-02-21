@@ -13,7 +13,8 @@ class FoodsController < ApplicationController
   end
 
   def create
-    if @food.save
+    food = Food.new(food_params)
+    if food.save
       redirect_to root_path
     end
   end
@@ -26,4 +27,8 @@ class FoodsController < ApplicationController
     
   end
 
+  private
+  def food_params
+    params.require(:food).permit(:food_name, :calories, :protein, :fats, :carbs, :servings)
+  end
 end
