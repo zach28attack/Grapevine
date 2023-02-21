@@ -1,0 +1,6 @@
+.form-box {
+  display: grid;
+}
+.food-input {
+  width: fit-content;
+}
