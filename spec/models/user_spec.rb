@@ -1,24 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.first_or_create(email: "example@test.com", password: "password")
+  user = User.first_or_create(name: "Johnny Test", email: "example@test.com", password: "password")
 
-  it 'has a password' do 
-    expect(user).to be_valid
-  end
-
-  context 'without password' do
-    it 'should be invalid' do
-      user.password = nil
+  context 'when creating a valid user' do 
+    it 'should be valid' do 
       expect(user).to be_valid
     end
   end
 
-  context 'without email' do
-    it 'should be invalid' do
-      user.email = nil
+  context 'when creating an invalid user' do
+
+    it 'is invalid without password' do
+      user.password = ''
       expect(user).to_not be_valid
     end
-  end
 
+    it 'is invalid with password less than 6 characters' do
+      user.password = '12345'
+      expect(user).to_not be_valid
+    end
+
+    it 'is invalid without email' do
+      user.password = "password"
+      user.email = ''
+      expect(user).to_not be_valid
+    end
+
+  end
 end
