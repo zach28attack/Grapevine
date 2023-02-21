@@ -1,0 +1,9 @@
+<% @foods.each do |food| %>
+  <%= link_to "Show food", food_path(food) %>
+  name:<%= food.food_name %></br>
+  calories:<%= food.calories %></br>
+  fats:<%= food.fats %></br>
+  protein:<%= food.protein %></br>
+  carbs:<%= food.carbs %></br>
+  servings:<%= food.servings %><hr>
+<%end%>
