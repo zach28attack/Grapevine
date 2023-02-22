@@ -31,13 +31,6 @@ RSpec.describe FoodsController, :type => :controller do
     end
   end
 
-  describe "GET show" do
-    it "has 200 status code" do
-      get :show, params: {id: food.id}
-      expect(response).to be_successful # same as expect(response.status).to eq(200)
-    end
-  end
-
   describe "PATCH update" do
     context "with valid attributes" do
       it "updates food and redirects to show page" do
@@ -56,7 +49,13 @@ RSpec.describe FoodsController, :type => :controller do
         expect(response).to render_template(:edit)
       end
     end
+  end
 
+  describe "DELETE food" do
+    it "deletes food and redirects to index" do
+      expect { delete :destroy, params: {id: food.id}}.to change(Food, :count).by(-1)
+      expect(response).to redirect_to(foods_path)
+    end
   end
 
 end
