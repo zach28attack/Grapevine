@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-
+  before_action :set_food, only: %i{show edit update destroy }
   def index
     @foods = Food.all
   end
@@ -9,7 +9,6 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
   end
 
   def create
@@ -22,11 +21,9 @@ class FoodsController < ApplicationController
   end
 
   def edit
-    @food = Food.find(params[:id])
   end
 
   def update
-    @food = Food.find(params[:id])
     if @food.update(food_params)
       redirect_to foods_path
     else
@@ -35,7 +32,6 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id])
     @food.destroy
     redirect_to foods_path
   end
@@ -43,5 +39,9 @@ class FoodsController < ApplicationController
   private
   def food_params
     params.require(:food).permit(:food_name, :calories, :protein, :fats, :carbs, :servings)
+  end
+
+  def set_food
+    @food = Food.find(params[:id])
   end
 end
