@@ -1,0 +1,22 @@
+<%= form_with model: @food do |f| %>
+  <div class = "form-box">
+    <%= f.label :food_name, "Name of food", class: "food-label" %>
+    <%= f.text_field :food_name, class: "food-input" %>
+  
+    <%= f.label :calories, "Calories per serv.", class: "food-label" %>
+    <%= f.text_field :calories, class: "food-input" %>
+  
+    <%= f.label :protein, "Protein", class: "food-label" %>
+    <%= f.text_field :protein, class: "food-input" %>
+  
+    <%= f.label :carbs, "Carbohydrates", class: "food-label" %>
+    <%= f.text_field :carbs, class: "food-input" %>
+  
+    <%= f.label :fats, "Fats", class: "food-label" %>
+    <%= f.text_field :fats, class: "food-input" %>
+
+    <%= f.label :servings, "Servings", class: "food-label" %>
+    <%= f.text_field :servings, class: "food-input" %>
+  </div>
+  <%=f.submit%>
+<%end%>
