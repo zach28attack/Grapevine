@@ -13,9 +13,11 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = Food.new(food_params)
-    if food.save
+    @food = Food.new(food_params)
+    if @food.save
       redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
