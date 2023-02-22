@@ -1,0 +1,3 @@
+class DiaryController < ApplicationController
+
+end
