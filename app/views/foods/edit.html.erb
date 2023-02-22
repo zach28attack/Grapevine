@@ -1,0 +1,4 @@
+<h1>Edit Food</h1>
+<%= render partial: 'shared/errors', locals:{ obj: @food } %>
+<%= render "form" %>
+<%= button_to "Delete item", food_path, method: :delete, form: {data: {turbo_confirm: "Are you sure?"}} %>
