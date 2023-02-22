@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_193741) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_195726) do
+  create_table "diaries", force: :cascade do |t|
+    t.integer "calories_budget"
+    t.integer "calories_eaten"
+    t.integer "calories_left"
+    t.integer "protein_budget"
+    t.integer "protein_eaten"
+    t.integer "protein_left"
+    t.integer "fats_budget"
+    t.integer "fats_eaten"
+    t.integer "fats_left"
+    t.integer "carbs_budget"
+    t.integer "carbs_eaten"
+    t.integer "carbs_left"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "foods", force: :cascade do |t|
     t.string "food_name"
     t.integer "calories"
