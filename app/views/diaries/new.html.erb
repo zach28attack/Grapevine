@@ -1,0 +1,28 @@
+<%= form_with(model: @diary, local: true) do |form| %>
+  <%= render partial: "shared/errors", locals:{obj: @diary} %>
+
+  <div class="field">
+    <p>Total Calories:</p>
+    <%= @diary.calories_budget %>
+    </br>
+    <%= form.label :calories_eaten %>
+    <%= form.text_field :calories_eaten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :protein_eaten %>
+    <%= form.text_field :protein_eaten %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :fats_eaten %>
+    <%= form.text_field :fats_eaten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carbs_eaten %>
+    <%= form.text_field :carbs_eaten %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
