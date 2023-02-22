@@ -1,5 +1,5 @@
 class DiaryController < ApplicationController
-  before_action :set_diary, only: %i{show edit update destroy }
+  before_action :set_diary, only: %i{ show edit update destroy }
 
   def new
     @diary = Diary.new
