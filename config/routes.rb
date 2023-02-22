@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :foods
-  resources :diary
+  resources :diaries
   root "home#index"
 end
