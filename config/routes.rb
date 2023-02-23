@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :foods
   resources :diaries
   root "home#index"
+  get "welcome", to:"welcome#welcome"
 end
