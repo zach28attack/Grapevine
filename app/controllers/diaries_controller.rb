@@ -14,9 +14,9 @@ class DiariesController < ApplicationController
     current_user.calories_budget ? totalCal = current_user.calories_budget : totalCal = 2000
     
     @diary.calories_budget = totalCal
-    @diary.protein_budget = ((totalCal * 0.2) / 4).to_i
-    @diary.fats_budget = ((totalCal * 0.3) / 9)
-    @diary.carbs_budget = ((totalCal * 0.5) / 4)
+    @diary.protein_budget = ((totalCal * 0.2) / 4).to_i   #
+    @diary.fats_budget = ((totalCal * 0.3) / 9)           # to calculate macro targets
+    @diary.carbs_budget = ((totalCal * 0.5) / 4)          #
   end
 
   def index
@@ -30,7 +30,13 @@ class DiariesController < ApplicationController
   end
 
   def create
-    
+    @diary = Diary.new(diary_params)
+    @diary.user = current_user
+    if @diary.save
+      redirect_to diaries_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -43,6 +49,10 @@ class DiariesController < ApplicationController
 
   def set_diary
     @diary = Diary.find(params[:id])
-
   end
+
+  def diary_params
+    params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings)
+  end
+
 end
