@@ -1,5 +1,6 @@
-<% @diaries.each do |d| %>
-<%= d.user.email %>
-<%= d.user.calories_budget %>
-<%= d.calories_budget %>
-<%end%>
+<h1 class="title">Home</h1>
+<div class="grid">
+  <div class="summary-card">
+  <%= render "diet_summary" %>
+  </div>
+</div>
