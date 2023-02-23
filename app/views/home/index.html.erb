@@ -1,8 +1,4 @@
 <h1>Home page</h1>
 <%= link_to "go to food index", foods_path %>
-<%= link_to "go to diary index", diary_index_path %>
+<%= link_to "go to diary index", diaries_path %>
 
-<%if !user_signed_in?%>
-  <%= link_to "Sign up", new_user_registration_path %> 
-  <%= link_to "Log in", new_user_session_path %>
-<%end%>
