@@ -1,4 +1,5 @@
 class DiariesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_diary, only: %i{ show edit update destroy }
   #carbs 50% of total cals
     #4 cals per gram
