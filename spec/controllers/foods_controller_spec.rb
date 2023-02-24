@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe FoodsController, :type => :controller do
   let!(:food) {Food.create(food_name: "eggs", calories: 70, protein: 23, fats: 10, carbs: 0, servings: 1)}
-  let!(:user) {User.create(email: "testing@example.com", password: "123456")}
+  let!(:user) {User.create(email: "testing@example.com", password: "123456", cals_budget:2000)}
   describe "GET #index" do
     it "has a 200 status code" do
       sign_in user
