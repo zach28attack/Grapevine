@@ -5,9 +5,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    #carbs 50% of total cals
+      # 4 cals per gram
+
+    #fats 30% of total cals
+      # 9 cals per gram
+
+    #protein 20% of total cals
+      # 4 cals per gram
+    
+    # @diary.calories_budget = totalCal
+    # @diary.protein_budget = ((totalCal * 0.2) / 4).to_i   #
+    # @diary.fats_budget = ((totalCal * 0.3) / 9)           # to calculate recommended macro targets
+    # @diary.carbs_budget = ((totalCal * 0.5) / 4) 
+    super
+  end
 
   # POST /resource
   def create
