@@ -1,20 +1,34 @@
+<% if @diary %>
+  
+
 <table>
   <tr>
+    <th></th>
     <th>Cals</th>
     <th>Protein</th>
     <th>Fats</th>
     <th>Carbs</th>
   </tr>
   <tr>
-    <th> <%=@diary.calories_budget%>cals </th>
-    <th> <%=@diary.protein_budget%>gs </th>
-    <th> <%=@diary.fats_budget%>gs </th>
-    <th> <%=@diary.carbs_budget%>gs </th>
+    <td>Total</td>
+    <td> <%=@dTotal.calories_budget%>cals </td>
+    <td> <%=@dTotal.protein_budget%>gs </td>
+    <td> <%=@dTotal.fats_budget%>gs </td>
+    <td> <%=@dTotal.carbs_budget%>gs </td>
   </tr>
   <tr>
+    <td>Used</td>
     <td> <%=@diary.calories_eaten%>cals </td>
     <td> <%=@diary.protein_eaten%>gs </td>
     <td> <%=@diary.fats_eaten%>gs </td>
     <td> <%=@diary.carbs_eaten%>gs </td>
   </tr>
+  <tr>
+    <td>left</td>
+    <td> <%=@diary.calories_left%>cals </td>
+    <td> <%=@diary.protein_left%>gs </td>
+    <td> <%=@diary.fats_left%>gs </td>
+    <td> <%=@diary.carbs_left%>gs </td>
+  </tr>
 </table>
+<% end %>

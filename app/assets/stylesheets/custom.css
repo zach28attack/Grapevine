@@ -7,4 +7,20 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+}
+.title {
+  text-align: center;
+}
+.summary-card {
+  grid-column: 2 / 3;
+}
+table {
+  border-collapse: collapse;
+}
+table,tr,th {
+  border: solid;
+}
+table,tr,td {
+  border: 1px solid;
 }
