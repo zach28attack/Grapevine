@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_205021) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_23_201831) do
   create_table "diaries", force: :cascade do |t|
     t.integer "calories_budget"
     t.integer "calories_eaten"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_205021) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time_of_day"
   end
 
   create_table "foods", force: :cascade do |t|
