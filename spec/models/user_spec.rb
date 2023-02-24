@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.first_or_create(name: "Johnny Test", email: "example@test.com", password: "password")
+  user = User.first_or_create(name: "Johnny Test", email: "example@test.com", password: "password", cals_budget: 2000)
 
   context 'when creating a valid user' do 
     it 'should be valid' do 
