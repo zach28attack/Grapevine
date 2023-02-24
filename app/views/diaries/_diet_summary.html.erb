@@ -1,34 +1,55 @@
-<% if @diary %>
-  
+<div class="pie-chart-card">  
+  <table>
+    <tr>
+      <th></th>
+      <th>Cals</th>
+      <th>Protein</th>
+      <th>Fats</th>
+      <th>Carbs</th>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td> <%=current_user.cals_budget%>cal </td>
+      <td> <%=current_user.protein_budget%>g </td>
+      <td> <%=current_user.fats_budget%>g </td>
+      <td> <%=current_user.carbs_budget%>g </td>
+    </tr>
+    <tr>
+      <td>Used</td>
+      <td> <%=@calsEaten%>cal </td>
+      <td> <%=@proteinEaten%>g</td>
+      <td> <%=@fatsEaten%>g </td>
+      <td> <%=@carbsEaten%>g </td>
+    </tr>
+    <tr>
+      <td>Left</td>
+      <% if @calsLeft <= 0 %>
+        <td class="neg-macro"> <%=@calsLeft%>cal </td>
+      <%else%>
+        <td class="pos-macro"> <%=@calsLeft%>cal </td>
+      <%end%>
 
-<table>
-  <tr>
-    <th></th>
-    <th>Cals</th>
-    <th>Protein</th>
-    <th>Fats</th>
-    <th>Carbs</th>
-  </tr>
-  <tr>
-    <td>Total</td>
-    <td> <%=current_user.cals_budget%>cals </td>
-    <td> <%=current_user.protein_budget%>gs </td>
-    <td> <%=current_user.fats_budget%>gs </td>
-    <td> <%=current_user.carbs_budget%>gs </td>
-  </tr>
-  <tr>
-    <td>Used</td>
-    <td> <%=@calsEaten%>cals </td>
-    <td> <%=@proteinEaten%>gs </td>
-    <td> <%=@fatsEaten%>gs </td>
-    <td> <%=@carbsEaten%>gs </td>
-  </tr>
-  <tr>
-    <td>left</td>
-    <td> <%=@calsLeft%>cals </td>
-    <td> <%=@proteinLeft%>gs </td>
-    <td> <%=@fatsLeft%>gs </td>
-    <td> <%=@carbsLeft%>gs </td>
-  </tr>
-</table>
-<% end %>
+      <% if @proteinLeft <= 0%>
+        <td class="neg-macro"><%=@proteinLeft%>g </td>
+      <%else%>
+        <td class="pos-macro"> <%=@proteinLeft%>g </td>
+      <%end%>
+
+      <% if @fatsLeft <= 0%>
+        <td class="neg-macro"><%=@fatsLeft%>g </td>
+      <%else%>
+        <td class="pos-macro"> <%=@fatsLeft%>g </td>
+      <%end%>
+
+      <% if @carbsLeft <= 0%>
+        <td class="neg-macro"><%=@carbsLeft%>g </td>
+      <%else%>
+        <td class="pos-macro"> <%=@carbsLeft%>g </td>
+      <%end%>
+    </tr>
+  </table>
+  <%= pie_chart [
+     ["Carbs", @carbsEaten],
+      ["Protein" , @proteinEaten],
+       ["Fats", @fatsEaten]], height:"1000%"%>
+</div>
