@@ -5,7 +5,11 @@
   </div>
 </div>
 <% @diaries.each do |d|%>
- Diary#<%= d.id %>/cal:<%= d.calories_eaten %>/pro:<%= d.protein_eaten %>/fats:<%= d.fats_eaten %>/carbs:<%= d.carbs_eaten %></br>
-
+  Diary#<%= d.id %>
+  /cal:<%= d.calories_eaten %>
+  /pro:<%= d.protein_eaten %>
+  /fats:<%= d.fats_eaten %>
+  /carbs:<%= d.carbs_eaten %></br>
 <%end%>
+<%= render partial: "sub_diary", locals: {diaries: @diaries.select {|diary| diary.time_of_day == "lunch" }} %>
 <%= link_to "Log Entry", new_diary_path %>
