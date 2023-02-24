@@ -11,24 +11,24 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td> <%=@dTotal.calories_budget%>cals </td>
-    <td> <%=@dTotal.protein_budget%>gs </td>
-    <td> <%=@dTotal.fats_budget%>gs </td>
-    <td> <%=@dTotal.carbs_budget%>gs </td>
+    <td> <%=current_user.cals_budget%>cals </td>
+    <td> <%=current_user.protein_budget%>gs </td>
+    <td> <%=current_user.fats_budget%>gs </td>
+    <td> <%=current_user.carbs_budget%>gs </td>
   </tr>
   <tr>
     <td>Used</td>
-    <td> <%=@diary.calories_eaten%>cals </td>
-    <td> <%=@diary.protein_eaten%>gs </td>
-    <td> <%=@diary.fats_eaten%>gs </td>
-    <td> <%=@diary.carbs_eaten%>gs </td>
+    <td> <%=@calsEaten%>cals </td>
+    <td> <%=@proteinEaten%>gs </td>
+    <td> <%=@fatsEaten%>gs </td>
+    <td> <%=@carbsEaten%>gs </td>
   </tr>
   <tr>
     <td>left</td>
-    <td> <%=@diary.calories_left%>cals </td>
-    <td> <%=@diary.protein_left%>gs </td>
-    <td> <%=@diary.fats_left%>gs </td>
-    <td> <%=@diary.carbs_left%>gs </td>
+    <td> <%=@calsLeft%>cals </td>
+    <td> <%=@proteinLeft%>gs </td>
+    <td> <%=@fatsLeft%>gs </td>
+    <td> <%=@carbsLeft%>gs </td>
   </tr>
 </table>
 <% end %>
