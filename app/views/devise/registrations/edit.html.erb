@@ -27,6 +27,24 @@
   </div>
 
   <div class="field">
+    <%= f.label :cals_budget %>:
+    <%= f.text_field :cals_budget%>
+  </div>
+
+  <div class="field">
+    <%= f.label :protein_budget %>:
+    <%= f.text_field :protein_budget%>
+  </div>
+  <div class="field">
+    <%= f.label :fats_budget %>:
+    <%= f.text_field :fats_budget%>
+  </div>
+  <div class="field">
+    <%= f.label :carbs_budget %>:
+    <%= f.text_field :carbs_budget%>
+  </div>
+
+  <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
