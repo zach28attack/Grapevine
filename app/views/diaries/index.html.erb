@@ -5,5 +5,7 @@
   </div>
 </div>
 <% @diaries.each do |d|%>
- Diary#<%= d.id %></br>
+ Diary#<%= d.id %>/cal:<%= d.calories_eaten %>/pro:<%= d.protein_eaten %>/fats:<%= d.fats_eaten %>/carbs:<%= d.carbs_eaten %></br>
+
 <%end%>
+<%= link_to "Log Entry", new_diary_path %>
