@@ -2,8 +2,6 @@
   <%= render partial: "shared/errors", locals:{obj: @diary} %>
 
   <div class="field">
-    <p>Total Calories:</p>
-    <%= @diary.calories_budget %>
     </br>
     <%= form.label :calories_eaten %>
     <%= form.text_field :calories_eaten %>
