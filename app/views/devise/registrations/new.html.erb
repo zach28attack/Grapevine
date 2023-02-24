@@ -21,6 +21,23 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :cals_budget %><br />
+    <%= f.text_field :cals_budget%>
+  </div>
+  <div class="field">
+    <%= f.label :protein_budget %><br />
+    <%= f.text_field :protein_budget%>
+  </div>
+  <div class="field">
+    <%= f.label :fats_budget %><br />
+    <%= f.text_field :fats_budget%>
+  </div>
+  <div class="field">
+    <%= f.label :carbs_budget %><br />
+    <%= f.text_field :carbs_budget%>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
