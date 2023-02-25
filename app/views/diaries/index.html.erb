@@ -3,13 +3,21 @@
   <div class="summary-card">
   <%= render "diet_summary" %>
   </div>
+
+  <div class="sub-list">
+    <% breakfastDiary = @diaries.select {|diary| diary.time_of_day == "breakfast"} %>
+    <% lunchDiary = @diaries.select {|diary| diary.time_of_day == "lunch"} %>
+    <% dinnerDiary = @diaries.select {|diary| diary.time_of_day == "dinner"} %>
+    <%if breakfastDiary%>
+      <%= render partial: "sub_diary", locals: {diaries: breakfastDiary } %>
+    <%end%>
+    <%if lunchDiary%>
+      <%= render partial: "sub_diary", locals: {diaries: lunchDiary } %>
+    <%end%>
+    <%if dinnerDiary%>
+      <%= render partial: "sub_diary", locals: {diaries: dinnerDiary } %>
+    <%end%>
+  </div>
 </div>
-<% @diaries.each do |d|%>
-  Diary#<%= d.id %>
-  /cal:<%= d.calories_eaten %>
-  /pro:<%= d.protein_eaten %>
-  /fats:<%= d.fats_eaten %>
-  /carbs:<%= d.carbs_eaten %></br>
-<%end%>
-<%= render partial: "sub_diary", locals: {diaries: @diaries.select {|diary| diary.time_of_day == "lunch" }} %>
+
 <%= link_to "Log Entry", new_diary_path %>
