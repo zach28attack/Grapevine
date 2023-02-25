@@ -2,7 +2,6 @@
   <%= render partial: "shared/errors", locals:{obj: @diary} %>
 
   <div class="field">
-    <br/>
     <%= form.label :calories_eaten %>
     <%= form.text_field :calories_eaten %>
   </div>
@@ -23,9 +22,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :time_of_day %>
-    <%= form.text_field :time_of_day %>
-    "breakfast","lunch","dinner"
+    <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
   </div>
 
   <%= form.submit %>
