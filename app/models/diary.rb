@@ -1,6 +1,5 @@
 class Diary < ApplicationRecord
   belongs_to :user, class_name: "User"
-  validates :time_of_day, presence: true
   validates :calories_eaten, presence: true
   validates :protein_eaten, presence: true
   validates :fats_eaten, presence: true

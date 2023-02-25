@@ -6,6 +6,7 @@ class DiariesController < ApplicationController
 
   def new
     @diary = Diary.new   
+    @foods = Food.all
   end
 
   def index
@@ -38,7 +39,16 @@ class DiariesController < ApplicationController
   end
 
   def create
-    @diary = Diary.new(diary_params)
+    @diary = Diary.new
+    if @food
+      @diary.calories_eaten = @food.calories    #grab food from food list and populate Diary fields
+      @diary.protein_eaten = @food.protein
+      @diary.fats_eaten = @food.fats
+      @diary.carbs = @food.carbs
+    else
+      @diary = Diary.new(diary_params)
+    end
+
     @diary.user_id = current_user.id
     if @diary.save
       redirect_to diaries_path
