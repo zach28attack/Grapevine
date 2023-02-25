@@ -1,3 +1,8 @@
-<div class="sub_card">
-  <%= diaries.last %>
+<div class="sub-card">
+  <div class="sub-card-food">
+    <%= diaries.last %>
+  </div>
+  <div class="sub-card-link">
+    <%= link_to "Log #{diaries.last.time_of_day}", new_diary_path(time_of_day: diaries.last.time_of_day )%>
+  </div>
 </div>
