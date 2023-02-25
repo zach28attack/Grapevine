@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_diary, only: %i{ show edit update destroy }
- 
+  before_action :set_empty_diaries, only: %i{index}
 
 
   def new
@@ -10,7 +10,8 @@ class DiariesController < ApplicationController
   end
 
   def index
-    @diaries = Diary.all.select do |d| #select only diaries created today
+
+    @diaries = Diary.all.select do |d|                  #select only diaries created today
       d.created_at.day == Time.zone.now.to_datetime.day
     end
     
@@ -73,4 +74,34 @@ class DiariesController < ApplicationController
     params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings, :time_of_day)
   end
 
+
+  def set_empty_diaries                                                   
+    diary = Diary.find_or_create_by(time_of_day: "breakfast") do |diary|
+      diary.calories_eaten = 0            #
+      diary.protein_eaten = 0             # if user has not logged any any diaries yet  
+      diary.fats_eaten = 0                # populate default diaries for breakfast, lunch, and dinner
+      diary.carbs_eaten = 0               # for use of naming sub diaries
+      diary.user_id = current_user.id     #
+    end
+    diary.save
+  
+    Diary.find_or_create_by(time_of_day: "lunch") do |diary|
+      diary.calories_eaten = 0
+      diary.protein_eaten = 0
+      diary.fats_eaten = 0
+      diary.carbs_eaten = 0
+      diary.user_id = current_user.id
+    end
+    diary.save
+  
+    Diary.find_or_create_by(time_of_day: "dinner") do |diary|
+      diary.calories_eaten = 0
+      diary.protein_eaten = 0
+      diary.fats_eaten = 0
+      diary.carbs_eaten = 0
+      diary.user_id = current_user.id
+    end
+    diary.save
+  end
+  
 end
