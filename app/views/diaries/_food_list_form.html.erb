@@ -2,15 +2,19 @@
   <% @diary = Diary.new %>
   <%= form_with(model: @diary, local: true) do |form| %>
     <%= food.food_name %>
-    <%= form.text_field :calories_eaten, value: food.calories %>
+    <%= form.hidden_field :calories_eaten, value: food.calories %>
     <%= food.calories %>
-    <%= form.text_field :protein_eaten, value: food.protein %>
+
+    <%= form.hidden_field :protein_eaten, value: food.protein %>
     <%= food.protein %>
-    <%= form.text_field :fats_eaten, value: food.fats %>
+
+    <%= form.hidden_field :fats_eaten, value: food.fats %>
     <%= food.fats %>
-    <%= form.text_field :carbs_eaten, value: food.carbs %>
+
+    <%= form.hidden_field :carbs_eaten, value: food.carbs %>
     <%= food.carbs %>
-    <%= form.text_field :food_id, value: food.id %>
+    
+    <%= form.hidden_field :food_id, value: food.id %>
     <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
     <%= form.submit "Add food" %>
   <% end %>
