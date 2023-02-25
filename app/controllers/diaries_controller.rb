@@ -40,7 +40,10 @@ class DiariesController < ApplicationController
   end
 
   def create
+    
     @diary = Diary.new
+    @diary.time_of_day = params[:time_of_day]
+    
     if @food
       @diary.calories_eaten = @food.calories    #grab food from food list and populate Diary fields
       @diary.protein_eaten = @food.protein
@@ -49,7 +52,7 @@ class DiariesController < ApplicationController
     else
       @diary = Diary.new(diary_params)
     end
-
+    
     @diary.user_id = current_user.id
     if @diary.save
       redirect_to diaries_path
@@ -71,7 +74,7 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings, :time_of_day)
+    params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings, :time_of_day, :food_id)
   end
 
 
