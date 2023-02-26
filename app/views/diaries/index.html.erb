@@ -1,23 +1,23 @@
 <h1 class="title">Home</h1>
 <div class="grid">
   <div class="summary-card">
-  <%= render "diet_summary" %>
+    <%= render "diet_summary" %>
   </div>
 
   <div class="sub-list">
-    <% breakfastDiary = @diaries.select {|diary| diary.time_of_day == "breakfast"} %>
-    <% lunchDiary = @diaries.select {|diary| diary.time_of_day == "lunch"} %>
-    <% dinnerDiary = @diaries.select {|diary| diary.time_of_day == "dinner"} %>
-    <%if breakfastDiary%>
-      <%= render partial: "sub_diary", locals: {diaries: breakfastDiary } %>
+    <% breakfastDiaries = @diaries.select {|diary| diary.time_of_day == "breakfast"} %>
+    <% lunchDiaries = @diaries.select {|diary| diary.time_of_day == "lunch"} %>
+    <% dinnerDiaries = @diaries.select {|diary| diary.time_of_day == "dinner"} %>
+    <%if breakfastDiaries%>
+      <%= render partial: "sub_diary", locals: {diaries: breakfastDiaries } %>
     <%end%>
-    <%if lunchDiary%>
-      <%= render partial: "sub_diary", locals: {diaries: lunchDiary } %>
+    <%if lunchDiaries%>
+      <%= render partial: "sub_diary", locals: {diaries: lunchDiaries } %>
     <%end%>
-    <%if dinnerDiary%>
-      <%= render partial: "sub_diary", locals: {diaries: dinnerDiary } %>
+    <%if dinnerDiaries%>
+      <%= render partial: "sub_diary", locals: {diaries: dinnerDiaries } %>
     <%end%>
   </div>
 </div>
 
-<%= link_to "Log Entry", new_diary_path %>
+<%= link_to "add new food", new_food_path %>
