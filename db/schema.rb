@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_25_214222) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_201055) do
   create_table "diaries", force: :cascade do |t|
     t.integer "calories_eaten"
     t.integer "protein_eaten"
@@ -21,6 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_214222) do
     t.datetime "updated_at", null: false
     t.string "time_of_day"
     t.integer "food_id"
+    t.integer "meal_id"
+    t.index ["meal_id"], name: "index_diaries_on_meal_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -34,6 +36,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_214222) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "foods_meals", force: :cascade do |t|
+    t.integer "food_id", null: false
+    t.integer "meal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_foods_meals_on_food_id"
+    t.index ["meal_id"], name: "index_foods_meals_on_meal_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.string "meal_name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,7 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_214222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "calories_budget"
     t.integer "cals_budget"
     t.integer "protein_budget"
     t.integer "fats_budget"
@@ -52,4 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_214222) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "diaries", "meals"
+  add_foreign_key "foods_meals", "foods"
+  add_foreign_key "foods_meals", "meals"
 end
