@@ -1,0 +1,22 @@
+<%@foodsMeals.each do |foodMeal|%>
+  <% meal = Meal.find(foodMeal.meal_id)%>
+  <%= form_with model: @diary do |form| %>
+    <%= meal.meal_name %>
+    
+    <%= form.hidden_field :calories_eaten, value: meal.foods.sum(:calories) %>
+    <%= meal.foods.sum(:calories) %>
+
+    <%= form.hidden_field :protein_eaten, value: meal.foods.sum(:protein) %>
+    <%= meal.foods.sum(:protein) %>
+
+    <%= form.hidden_field :fats_eaten, value: meal.foods.sum(:fats) %>
+    <%= meal.foods.sum(:fats) %>
+
+    <%= form.hidden_field :carbs_eaten, value: meal.foods.sum(:carbs) %>
+    <%= meal.foods.sum(:carbs) %>
+    
+    <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
+    <%= form.submit "Add food" %>
+    
+  <%end%>
+<%end%>
