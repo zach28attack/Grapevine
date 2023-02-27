@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-table {
+.table {
   border-collapse: collapse;
 }
-table,tr,th {
+.table th {
   border-bottom: solid;
 }
-table,tr,td {
+.table td {
   border: 1px solid;
 }
 
