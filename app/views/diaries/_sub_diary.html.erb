@@ -1,6 +1,10 @@
 <div class="sub-card">
   <div class="sub-card-food">
-    <%= Food.find(diaries.last.food_id).food_name if diaries.last.food_id %>
+    <%if diaries.last.food_id%>
+      <%= Food.find(diaries.last.food_id).food_name %>
+    <%else%>
+      <p>Your <%=diaries.last.time_of_day%>  log is empty</p>
+    <%end%>
   </div>
   <div class="sub-card-link">
     <%= link_to "Log #{diaries.last.time_of_day}", new_diary_path(time_of_day: diaries.last.time_of_day )%>
