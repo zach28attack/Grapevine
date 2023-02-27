@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     }
   resources :foods
   resources :diaries
+  resources :meals, only: %i[ new create destroy index ]
+  resources :foods_meals
   root "diaries#index"
   get "welcome", to:"welcome#welcome"
 end
