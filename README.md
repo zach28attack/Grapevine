@@ -18,8 +18,13 @@ features I plan to implement:
 As for gems, here are some that I plan to include in this project.
 
 • "Devise" for user authentication and authorization.
+
 • "Shrine" for file uploads, which users could use to upload photos of their meals(or recipes?).
+
 • "Chartkick" for generating graphs and other visual aids.
+
 • "RSpec" for testing the application.
+
 • "CanCanCan" for role-based authorization.
+
 • "ActiveAdmin" for creating an admin dashboard for managing user data.
