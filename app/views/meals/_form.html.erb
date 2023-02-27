@@ -1,0 +1,7 @@
+<%= form_with model: @meal do |f| %>
+  <hr>
+  <p>Create new meal</p>
+  <%= f.label :meal_name %>
+  <%= f.text_field :meal_name %>
+  <%=f.submit "Create Meal"%>
+<%end%>
