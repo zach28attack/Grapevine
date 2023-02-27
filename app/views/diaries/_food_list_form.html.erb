@@ -2,6 +2,7 @@
   <% @diary = Diary.new %>
   <%= form_with(model: @diary, local: true) do |form| %>
     <%= food.food_name %>
+    
     <%= form.hidden_field :calories_eaten, value: food.calories %>
     <%= food.calories %>
 
