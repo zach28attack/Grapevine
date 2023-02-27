@@ -24,7 +24,3 @@ As for gems, here are some that I plan to include in this project.
 • "Chartkick" for generating graphs and other visual aids.
 
 • "RSpec" for testing the application.
-
-• "CanCanCan" for role-based authorization.
-
-• "ActiveAdmin" for creating an admin dashboard for managing user data.
