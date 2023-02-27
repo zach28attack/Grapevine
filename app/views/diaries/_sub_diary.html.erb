@@ -3,6 +3,6 @@
     <%= Food.find(diaries.last.food_id).food_name if diaries.last.food_id %>
   </div>
   <div class="sub-card-link">
-    <%= link_to "Log #{current_user.diaries.last.time_of_day}", new_diary_path(time_of_day: diaries.last.time_of_day )%>
+    <%= link_to "Log #{diaries.last.time_of_day}", new_diary_path(time_of_day: diaries.last.time_of_day )%>
   </div>
 </div>
