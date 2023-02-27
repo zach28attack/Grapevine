@@ -7,6 +7,8 @@ class DiariesController < ApplicationController
   def new
     @diary = Diary.new   
     @foods = Food.all
+    @meal = Meal.new
+    @foodsMeals = FoodsMeal.all.select(:meal_id).distinct #create an array of unique meal_id's
   end
 
   def index
