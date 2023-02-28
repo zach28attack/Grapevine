@@ -9,7 +9,14 @@ def create
   @foodsMeal = FoodsMeal.new(foods_meal_params)
   @foodsMeal.user_id = current_user.id
   if @foodsMeal.save
-    redirect_to diaries_path
+    redirect_to new_foods_meal_path(@foodsMeal)
+  end
+end
+
+def destroy
+  foodsMeal = FoodsMeal.find(params[:id])
+  if foodsMeal.destroy
+    redirect_to new_foods_meal_path(@foodsMeal)
   end
 end
 
