@@ -25,6 +25,7 @@ class DiariesController < ApplicationController
   end
 
   def show
+    #may remove action#
   end
 
   def edit
