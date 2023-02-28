@@ -7,7 +7,7 @@ class MealsController < ApplicationController
   def create
     m = Meal.new(meal_params)
     if m.save
-      redirect_to meals_path
+      redirect_to new_foods_meal_path(id: m.id)
     end
   end
 
