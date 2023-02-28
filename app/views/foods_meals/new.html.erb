@@ -1,1 +1,36 @@
-<h1 class="title">FoodMeals NEW</h1>
+<h1 class="title"><%=@meal.meal_name%></h1>
+<div class= "meal-grid">
+  <ol class="meal-card">
+    <% @meal.foods.each do |food|%>
+      <li class="meal-item">
+        <div class="meal-name"><%=food.food_name%> </div>
+        <div class= "meal-macros">
+          <%= food.calories %> Calories/
+          <%= food.protein %> protein/
+          <%= food.fats %> fats/
+          <%= food.carbs %> carbs/
+          <%= food.servings %> servings/
+        </div>
+      </li>
+    <%end%>
+    
+  </ol>
+  <h4 class="meal-sum-title">Budget:  <%= current_user.cals_budget%> calories</h4>
+  
+  <div class="meal-sum">
+      <%= @meal.foods.sum(:calories) %>
+  </div>
+
+  <div class="food-list">
+    <% Food.all.each do |food| %>
+      <%= form_with(model: @foodsMeal, local: true) do |form| %>
+        <%= food.food_name %>
+        <%= food.calories %>
+        <%= form.hidden_field :food_id, value: food.id %>
+        <%= form.hidden_field :meal_id, value: @meal.id %>
+        <%= form.submit "Add food" %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
