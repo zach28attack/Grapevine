@@ -1,4 +1,4 @@
-<% @foods.each do |food| %>
+<% Food.all.each do |food| %>
   <% @diary = Diary.new %>
   <%= form_with(model: @diary, local: true) do |form| %>
     <%= food.food_name %>
