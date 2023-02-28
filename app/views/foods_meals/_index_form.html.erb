@@ -16,7 +16,7 @@
     <%= meal.foods.sum(:carbs) %>
     
     <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
-    <%= form.submit "Add food" %>
-    
+    <%= form.submit "Add meal" %>
+    <%= link_to "Edit meal", new_foods_meal_path(id: foodMeal.meal_id) %>
   <%end%>
 <%end%>
