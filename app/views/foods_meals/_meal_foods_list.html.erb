@@ -1,0 +1,14 @@
+<ol class="meal-card">
+  <% @meal.foods.each do |food|%>
+    <li class="meal-item">
+      <div class="meal-name"><%=food.food_name%> </div>
+      <div class= "meal-macros">
+        <%= food.calories %> Calories/
+        <%= food.protein %> protein/
+        <%= food.fats %> fats/
+        <%= food.carbs %> carbs/
+        <%= food.servings %> servings/
+      </div>
+    </li>
+  <%end%>
+</ol>

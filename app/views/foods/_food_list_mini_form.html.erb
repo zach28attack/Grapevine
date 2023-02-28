@@ -1,0 +1,11 @@
+<div class="food-list">
+    <% Food.all.each do |food| %>
+      <%= form_with(model: @foodsMeal, local: true) do |form| %>
+        <%= food.food_name %>
+        <%= food.calories %>
+        <%= form.hidden_field :food_id, value: food.id %>
+        <%= form.hidden_field :meal_id, value: @meal.id %>
+        <%= form.submit "Add food" %>
+      <% end %>
+    <% end %>
+  </div>
