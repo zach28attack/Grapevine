@@ -1,7 +1,7 @@
 <ol class="meal-card">
   <% @meal.foods.each do |food|%>
     <li class="meal-item">
-      <div class="meal-name"><%=food.food_name%> </div>
+      <div class="meal-name"><%=food.food_name%><%= link_to "remove item", foods_meal_path(FoodsMeal.find_by(food_id: food.id, meal_id: @meal.id)), data:{"turbo-method": :delete}  %> </div>
       <div class= "meal-macros">
         <%= food.calories %> Calories/
         <%= food.protein %> protein/
@@ -10,5 +10,6 @@
         <%= food.servings %> servings/
       </div>
     </li>
+    <hr>
   <%end%>
 </ol>
