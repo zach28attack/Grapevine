@@ -1,5 +1,5 @@
-<%@foodsMeals.each do |foodMeal|%>
-  <% meal = Meal.find(foodMeal.meal_id)%>
+<%@foodsMeals.each do |foodsMeal|%>
+  <% meal = Meal.find(foodsMeal.meal_id)%>
   <%= form_with model: @diary do |form| %>
     <%= meal.meal_name %>
     
@@ -17,6 +17,8 @@
     
     <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
     <%= form.submit "Add meal" %>
-    <%= link_to "Edit meal", new_foods_meal_path(id: foodMeal.meal_id) %>
+
+    <%= form.hidden_field :meal_id, value: meal.id %>
+    <%= link_to "Edit meal", new_foods_meal_path(id: foodsMeal.meal_id) %>
   <%end%>
 <%end%>
