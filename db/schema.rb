@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_202241) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_232828) do
   create_table "diaries", force: :cascade do |t|
     t.integer "calories_eaten"
     t.integer "protein_eaten"
@@ -68,6 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_202241) do
   end
 
   add_foreign_key "diaries", "meals"
-  add_foreign_key "foods_meals", "foods"
-  add_foreign_key "foods_meals", "meals"
+  add_foreign_key "foods_meals", "foods", on_delete: :cascade
+  add_foreign_key "foods_meals", "meals", on_delete: :cascade
 end
