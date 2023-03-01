@@ -1,5 +1,5 @@
 <h1 class="title"><%=@meal.meal_name%></h1>
-<%= link_to "Go back", new_diary_path %>
+<%= link_to "Go back", diaries_path %>
 <div class= "meal-grid">
   <%= render "meal_foods_list" %>
   <div class="meal-sum-title">Budget:  <%= current_user.cals_budget%> calories</div>
