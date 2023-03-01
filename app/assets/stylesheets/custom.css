@@ -13,7 +13,6 @@
 }
 .table td {
   border: 1px solid;
-  width: 150px;
 }
 
 .bg-grey{
@@ -39,7 +38,6 @@
 .pie-chart-card {
   display:flex;
   border: solid;
-  border-radius: 2%;
 }
 .neg-macro {
   color: red;
