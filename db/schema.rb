@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_232828) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_200912) do
   create_table "diaries", force: :cascade do |t|
     t.integer "calories_eaten"
     t.integer "protein_eaten"
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_232828) do
     t.string "time_of_day"
     t.integer "food_id"
     t.integer "meal_id"
-    t.index ["meal_id"], name: "index_diaries_on_meal_id"
   end
 
   create_table "foods", force: :cascade do |t|
