@@ -4,5 +4,5 @@ class Diary < ApplicationRecord
   validates :protein_eaten, presence: true
   validates :fats_eaten, presence: true
   validates :carbs_eaten, presence: true
-
+  belongs_to :meal, dependent: :destroy, optional: true
 end
