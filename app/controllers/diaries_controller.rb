@@ -32,8 +32,10 @@ class DiariesController < ApplicationController
   end
 
   def create
+    
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
+    
     if @diary.save
       redirect_to diaries_path
     else
@@ -54,7 +56,7 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings, :time_of_day, :food_id)
+    params.require(:diary).permit(:calories_eaten, :protein_eaten, :fats_eaten, :carbs_eaten, :servings, :time_of_day, :food_id, :meal_id)
   end
 
   def set_empty_diaries  
