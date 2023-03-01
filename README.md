@@ -6,9 +6,7 @@ features I plan to implement:
 
 • Barcode scanning: Use a gem like "barby" or "barby-barcode" to allow users to scan the barcode of a packaged food item to automatically populate nutritional information.
 
-• Recipe tracking: Allow users to track the nutritional information of homemade meals by entering the ingredients and quantities used in the recipe.
-
-• Water intake tracking: Give users the ability to track their daily water intake, which can help them stay hydrated and feel their best.
+• Water intake tracking: Give users the ability to track their daily water intake, which can help them stay hydrated.
 
 • Progress tracking: Allow users to see their progress over time, either through graphs or other visual aids.
 
