@@ -6,17 +6,17 @@ def new
 end
 
 def create
-  @foodsMeal = FoodsMeal.new(foods_meal_params)
-  @foodsMeal.user_id = current_user.id
-  if @foodsMeal.save
-    redirect_to new_foods_meal_path(@foodsMeal)
+  foodsMeal = FoodsMeal.new(foods_meal_params)
+  foodsMeal.user_id = current_user.id
+  if foodsMeal.save
+    redirect_to new_foods_meal_path(id: foodsMeal.meal_id)
   end
 end
 
 def destroy
   foodsMeal = FoodsMeal.find(params[:id])
   if foodsMeal.destroy
-    redirect_to new_foods_meal_path(@foodsMeal)
+    redirect_to new_foods_meal_path
   end
 end
 
