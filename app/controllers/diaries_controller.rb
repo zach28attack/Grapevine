@@ -39,7 +39,8 @@ class DiariesController < ApplicationController
     if @diary.save
       redirect_to diaries_path
     else
-      render :new
+      @foodsMeals = FoodsMeal.all.select(:meal_id).distinct #create an array of unique meal_id's
+      render :new, status: :unprocessable_entity
     end
   end
 
