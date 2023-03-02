@@ -73,7 +73,6 @@ RSpec.describe "Diaries", type: :system do
         expect {
           foods_meal
           visit new_diary_path
-          save_and_open_page
           click_button "Add meal"
         }.to change(Diary, :count).by(1)
       end
