@@ -11,7 +11,6 @@ RSpec.describe "Foods", type: :system do
 
   describe "GET #new" do
     it "should have 200 status code" do
-
       visit new_food_path
       expect(page.status_code).to eq(200)
     end
