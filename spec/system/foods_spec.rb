@@ -1,12 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe "Foods", type: :system do
+  
+  let!(:user) { FactoryBot.create(:user) }
   before do
     driven_by(:rack_test)
+    sign_in user
   end
+  
 
   describe "GET #new" do
     it "should have 200 status code" do
+
       visit new_food_path
       expect(page.status_code).to eq(200)
     end
@@ -41,8 +46,8 @@ RSpec.describe "Foods", type: :system do
           fill_in "food[servings]", with: 1 
           click_button "Create Food"
         }.to change(Food, :count).by(0)
-        # expect(page).to have_current_path(new_food_path)    # foods controller routes to /foods 
-      end                                                     # expect it to render :new page again
+        expect(page.status_code).to eq(422) #HTTP response code for unprocessable entity
+      end
     end
   end
 
