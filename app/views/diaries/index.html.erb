@@ -1,9 +1,6 @@
 <h1 class="title">Home</h1>
+<%= render "diet_summary" %>
 <div class="grid">
-  <div class="summary-card">
-    <%= render "diet_summary" %>
-  </div>
-
   <div class="sub-list">
     <% breakfastDiaries = @diaries.select {|diary| diary.time_of_day == "breakfast"} %>
     <% lunchDiaries = @diaries.select {|diary| diary.time_of_day == "lunch"} %>
