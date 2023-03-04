@@ -1,7 +1,7 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
   /* colors: purple #633aaa, light blue #80ccff */
   /*          pruple shade #1e1133, blue shade #263d4d */
 }
@@ -16,7 +16,11 @@
   margin: 30px;
   border-radius: 10px;
 }
-.table th, td {
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+}
+.table td {
   padding: 12px 16px;
   text-align: left;
 }
@@ -26,7 +30,7 @@
   color: #fff;
 }
 .table tbody tr:nth-child(2) {
-  background-color: #80ccff;
+  background-color: #80ccffca;
 }
 .table tbody tr {
   background-color: #80ccff95;
@@ -52,33 +56,49 @@
 }
 /* 
  */
-/* 
+/* #################################################################
  */
 .sub-diary-list {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  margin-top: 36px;
+  gap: 80px;
+  margin: 20px;
   
 }
 .sub-diary {
   border-collapse: collapse;
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
 }
 .sub-diary th {
-  border: 1px solid;
-  border-collapse: collapse;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10%;
-  padding-right: 10%;
+  background-color: #633aaa;
+  color: #fff;
   height: 36px;
   font-size: 20px;
-  align-items: end;
+  text-align: left;
+  padding-left: 9%;
+}
+.sub-diary thead th:nth-child(1){
+  border-top-left-radius: 20px;
+}
+.sub-diary thead th:nth-child(2){
+  border-left: 1px solid #633aaa;
+  border-top-right-radius: 20px;
+}
+.sub-diary tbody tr.last-row td:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .sub-diary td {
-  border: solid 1px;
+  height: 24PX;
+  padding-left: 10%;
 }
-/* 
+.sub-diary tbody tr:nth-child(even) {
+  background-color: #80ccffca;
+}
+.sub-diary tbody tr:nth-child(odd) {
+  background-color: #80ccff95;}
+/* #########################################################################################
  */
  /* 
   */
