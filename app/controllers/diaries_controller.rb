@@ -61,7 +61,7 @@ class DiariesController < ApplicationController
   end
 
   def set_empty_diaries  
-    ["breakfast", "lunch", "dinner"].each do |time_of_day|                                                
+    ["Breakfast", "Lunch", "Dinner"].each do |time_of_day|                                                
       diary = current_user.diaries.find_by(time_of_day: time_of_day, created_at: Date.current.all_day)
       unless diary
         current_user.diaries.create!(
