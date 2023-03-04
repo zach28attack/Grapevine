@@ -2,8 +2,9 @@
 <%= render "foods/food_list_form" %><br/>
 <%= render "meals/form" %><br/>
 <hr>
-<p>Your meals</p>
-<%= render "foods_meals/index_form" %><br/>
+<%if @foods_meals && !@foods_meals.empty?%>
+  <%= render "foods_meals/index_form"%><br/>
+<%end%>
 <%= link_to "add new food", new_food_path %><br/>
 <%= link_to "Cancel", diaries_path %><br/>
 
