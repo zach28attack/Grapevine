@@ -5,4 +5,12 @@ class Diary < ApplicationRecord
   validates :fats_eaten, presence: true, numericality: { only_integer: true }, length: {minimum:1, maximum:4}
   validates :carbs_eaten, presence: true, numericality: { only_integer: true }, length: {minimum:1, maximum:4}
   belongs_to :meal, optional: true
+
+  def item
+    if self.meal_id
+      meal = Meal.find(self.meal_id).meal_name 
+    elsif self.food_id 
+      food = Food.find(self.food_id).food_name 
+    end
+  end
 end
