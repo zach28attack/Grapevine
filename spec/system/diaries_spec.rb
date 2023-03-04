@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Diaries", type: :system do
   let!(:user) { FactoryBot.create(:user) }
-  let!(:breakfast_diary) { FactoryBot.create(:diary, time_of_day: "breakfast", user: user) }
-  let!(:lunch_diary) { FactoryBot.create(:diary, time_of_day: "lunch", user: user) }
-  let!(:dinner_diary) { FactoryBot.create(:diary, time_of_day: "dinner", user: user) }
   let(:food) { FactoryBot.create(:food) }
   let(:meal) { FactoryBot.create(:meal) }
   let(:foods_meal) { FactoryBot.create(:foods_meal, user: user, food_id: food.id, meal_id: meal.id) }
-  
+  let!(:diary) { FactoryBot.create(:diary, user: user, time_of_day: "Breakfast") }
+  let!(:diary2) { FactoryBot.create(:diary, user: user, time_of_day: "Lunch") }
+  let!(:diary3) { FactoryBot.create(:diary, user: user, time_of_day: "Dinner") }
+
   before do
     driven_by(:rack_test)
     sign_in user
@@ -23,7 +23,6 @@ RSpec.describe "Diaries", type: :system do
 
   describe "GET #new" do 
     it "Should have a 200 status code" do
-      
       visit new_diary_path
       expect(page.status_code).to eq(200)
     end
@@ -41,9 +40,10 @@ RSpec.describe "Diaries", type: :system do
           click_button "Create Diary"
         }.to change(Diary, :count).by(1)
         expect(page).to have_current_path(diaries_path)
+        
       end
     end
-
+################################################################
     context "with invalid attributes" do
       it "should not create new diary" do
         expect{
@@ -58,6 +58,7 @@ RSpec.describe "Diaries", type: :system do
       end
     end
 
+#########################################################
     context "using pre-populated foods" do
       it "should save diary" do
         expect{
