@@ -1,19 +1,20 @@
 <%time_of_day = diaries.last.time_of_day%>
-<%= diaries.sum(:calories_eaten)%>
 <table class="sub-diary">
   <thead>
     <tr>
       <th><%= time_of_day%></th>
+      <th><%= diaries.sum(:calories_eaten)%></th>
     </tr>
   </thead>
   <tbody>
     <% diaries.each do |diary| %>
       <tr>
         <td><%=diary.item_name%></td>
+        <td><%= diary.calories_eaten %></td>
       </tr>
     <%end%>
-    <tr>
-      <td><%= link_to "Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
+    <tr  class="last-row">
+      <td colspan="2"><%= link_to "Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
     </tr>
   </tbody>
 </table>
