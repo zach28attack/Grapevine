@@ -8,19 +8,19 @@ class DiariesController < ApplicationController
     @diary = Diary.new   
     @foods = Food.all
     @meal = Meal.new
-    @foodsMeals = FoodsMeal.all.select(:meal_id).distinct #create an array of unique meal_id's
+    @foods_meals = FoodsMeal.all.select(:meal_id).distinct #create an array of unique meal_id's
   end
 
   def index
-    @diaries = current_user.diaries.where(created_at: Time.zone.now.all_day) 
-    @calsEaten = @diaries.sum(:calories_eaten)
-    @fatsEaten = @diaries.sum(:fats_eaten)
-    @proteinEaten = @diaries.sum(:protein_eaten)
-    @carbsEaten = @diaries.sum(:carbs_eaten)
-    @calsLeft = current_user.cals_budget - @calsEaten
-    @proteinLeft = current_user.protein_budget - @proteinEaten
-    @fatsLeft = current_user.fats_budget - @fatsEaten
-    @carbsLeft = current_user.carbs_budget - @carbsEaten
+    @diaries = current_user.diaries.created_today
+    @cals_eaten = @diaries.sum(:calories_eaten)
+    @fats_eaten = @diaries.sum(:fats_eaten)
+    @protein_eaten = @diaries.sum(:protein_eaten)
+    @carbs_eaten = @diaries.sum(:carbs_eaten)
+    @cals_left = current_user.cals_budget - @cals_eaten
+    @protein_left = current_user.protein_budget - @protein_eaten
+    @fats_left = current_user.fats_budget - @fats_eaten
+    @carbs_left = current_user.carbs_budget - @carbs_eaten
     @diary = Diary.last
   end
 
@@ -32,14 +32,12 @@ class DiariesController < ApplicationController
   end
 
   def create
-    
+    # debugger
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
-    
     if @diary.save
       redirect_to diaries_path
     else
-      @foodsMeals = FoodsMeal.all.select(:meal_id).distinct #create an array of unique meal_id's
       render :new, status: :unprocessable_entity
     end
   end
