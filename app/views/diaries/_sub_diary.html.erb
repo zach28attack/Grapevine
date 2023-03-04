@@ -3,18 +3,21 @@
   <thead>
     <tr>
       <th><%= time_of_day%></th>
-      <th><%= diaries.sum(:calories_eaten)%></th>
+      <th colspan="5"><%= diaries.sum(:calories_eaten)%></th>
     </tr>
   </thead>
   <tbody>
     <% diaries.each do |diary| %>
       <tr>
-        <td><%=diary.item_name%></td>
-        <td><%= diary.calories_eaten %></td>
+        <td class="diary-item"><%=diary.item_name%></td>
+        <td class="macros"><%="protein. #{diary.protein_eaten}gs"%></td>
+        <td class="macros"><%="fats. #{diary.fats_eaten}gs"%></td>
+        <td class="macros"><%="carbs. #{diary.carbs_eaten}gs" %></td>
+        <td class="macros"><%= diary.calories_eaten %></td>
       </tr>
     <%end%>
     <tr  class="last-row">
-      <td colspan="2"><%= link_to "Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
+      <td colspan="5" class="link"><%= link_to "+Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
     </tr>
   </tbody>
 </table>
