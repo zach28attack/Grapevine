@@ -6,11 +6,13 @@ class Diary < ApplicationRecord
   validates :carbs_eaten, presence: true, numericality: { only_integer: true }, length: {minimum:1, maximum:4}
   belongs_to :meal, optional: true
 
-  def item
+  def item_name
     if self.meal_id
-      meal = Meal.find(self.meal_id).meal_name 
+     Meal.find(self.meal_id).meal_name 
     elsif self.food_id 
-      food = Food.find(self.food_id).food_name 
+      Food.find(self.food_id).food_name 
     end
   end
+  scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
+  scope :by_time_of_day, -> (time_of_day) { where(time_of_day: time_of_day) }
 end
