@@ -1,14 +1,19 @@
-<div class="sub-card">
-  <div class="sub-card-food">
-    <%if diaries.last.meal_id%>
-      <%= Meal.find(diaries.last.meal_id).meal_name %>
-    <%elsif diaries.last.food_id %> 
-      <%= Food.find(diaries.last.food_id).food_name %>
-    <%else%>
-      <p>Your <%=diaries.last.time_of_day%>  log is empty</p>
+<%time_of_day = diaries.last.time_of_day%>
+<%= diaries.sum(:calories_eaten)%>
+<table class="sub-diary">
+  <thead>
+    <tr>
+      <th><%= time_of_day%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% diaries.each do |diary| %>
+      <tr>
+        <td><%=diary.item_name%></td>
+      </tr>
     <%end%>
-  </div>
-  <div class="sub-card-link">
-    <%= link_to "Log #{diaries.last.time_of_day}", new_diary_path(time_of_day: diaries.last.time_of_day )%>
-  </div>
-</div>
+    <tr>
+      <td><%= link_to "Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
+    </tr>
+  </tbody>
+</table>
