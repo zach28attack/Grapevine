@@ -17,23 +17,23 @@
   </tr>
   <tr>
     <th>Food</th>
-    <%if @calsEaten%>
-      <td>-<%=@calsEaten%>cal</td>
+    <%if @cals_eaten%>
+      <td>-<%=@cals_eaten%>cal</td>
     <%else%>
       <td>0</td>
     <%end%>
-    <%if @proteinEaten%>
-      <td>-<%=@proteinEaten%>g</td>
+    <%if @protein_eaten%>
+      <td>-<%=@protein_eaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
-    <%if @fatsEaten%>
-      <td>-<%=@fatsEaten%>g</td>
+    <%if @fats_eaten%>
+      <td>-<%=@fats_eaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
-    <%if @carbsEaten%>
-      <td>-<%=@carbsEaten%>g</td>
+    <%if @carbs_eaten%>
+      <td>-<%=@carbs_eaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
@@ -41,34 +41,34 @@
   </tr>
   <tr>
     <th>Remaining</th>
-    <% if @calsLeft <= 0 %>
-      <td class="neg-macro"> <%=@calsLeft%>cal </td>
+    <% if @cals_left <= 0 %>
+      <td class="neg-macro"> <%=@cals_left%>cal </td>
     <%else%>
-      <td class="pos-macro"> <%=@calsLeft%>cal </td>
+      <td class="pos-macro"> <%=@cals_left%>cal </td>
     <%end%>
 
-    <% if @proteinLeft <= 0%>
-      <td class="neg-macro"><%=@proteinLeft%>g </td>
+    <% if @protein_left <= 0%>
+      <td class="neg-macro"><%=@protein_left%>g </td>
     <%else%>
-      <td class="pos-macro"> <%=@proteinLeft%>g </td>
+      <td class="pos-macro"> <%=@protein_left%>g </td>
     <%end%>
 
-    <% if @fatsLeft <= 0%>
-      <td class="neg-macro"><%=@fatsLeft%>g </td>
+    <% if @fats_left <= 0%>
+      <td class="neg-macro"><%=@fats_left%>g </td>
     <%else%>
-      <td class="pos-macro"> <%=@fatsLeft%>g </td>
+      <td class="pos-macro"> <%=@fats_left%>g </td>
     <%end%>
 
-    <% if @carbsLeft <= 0%>
-      <td class="neg-macro"><%=@carbsLeft%>g </td>
+    <% if @carbs_left <= 0%>
+      <td class="neg-macro"><%=@carbs_left%>g </td>
     <%else%>
-      <td class="pos-macro"> <%=@carbsLeft%>g </td>
+      <td class="pos-macro"> <%=@carbs_left%>g </td>
     <%end%>
   </tr>
 </table>
 <%= pie_chart [
-  ["Carbs", @carbsEaten],
-  ["Protein" , @proteinEaten],
-  ["Fats", @fatsEaten]
+  ["Carbs", @carbs_eaten],
+  ["Protein" , @protein_eaten],
+  ["Fats", @fats_eaten]
   ]%>
 

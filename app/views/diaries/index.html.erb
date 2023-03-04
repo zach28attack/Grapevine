@@ -1,19 +1,18 @@
 <div class="container-flex"><%= render "diet_summary" %></div>
-<div class="grid">
-  <div class="sub-list">
-    <% breakfastDiaries = @diaries.select {|diary| diary.time_of_day == "breakfast"} %>
-    <% lunchDiaries = @diaries.select {|diary| diary.time_of_day == "lunch"} %>
-    <% dinnerDiaries = @diaries.select {|diary| diary.time_of_day == "dinner"} %>
-    <%if breakfastDiaries%>
-      <%= render partial: "sub_diary", locals: {diaries: breakfastDiaries } %>
-    <%end%>
-    <%if lunchDiaries%>
-      <%= render partial: "sub_diary", locals: {diaries: lunchDiaries } %>
-    <%end%>
-    <%if dinnerDiaries%>
-      <%= render partial: "sub_diary", locals: {diaries: dinnerDiaries } %>
-    <%end%>
-  </div>
+<div class="sub-diary-list">
+  <% breakfast_diaries = @diaries.by_time_of_day("Breakfast")%>
+  <% lunch_diaries = @diaries.by_time_of_day("Lunch") %>
+  <% dinner_diaries = @diaries.by_time_of_day("Dinner") %>
+  
+  <%if breakfast_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: breakfast_diaries} %>
+  <%end%>
+  <%if lunch_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: lunch_diaries } %>
+  <%end%>
+  <%if dinner_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: dinner_diaries } %>
+  <%end%>
 </div>
 
 <%= link_to "add new food", new_food_path %>
