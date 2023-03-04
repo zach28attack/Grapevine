@@ -9,38 +9,38 @@
     </tr>
   </thead>
   <tr>
-    <th>Total</th>
+    <th>Target</th>
     <td> <%=current_user.cals_budget%>cal </td>
     <td> <%=current_user.protein_budget%>g </td>
     <td> <%=current_user.fats_budget%>g </td>
     <td> <%=current_user.carbs_budget%>g </td>
   </tr>
   <tr>
-    <th>Used</th>
+    <th>Food</th>
     <%if @calsEaten%>
-      <td>-<%=@calsEaten%> cal</td>
+      <td>-<%=@calsEaten%>cal</td>
     <%else%>
       <td>0</td>
     <%end%>
     <%if @proteinEaten%>
-      <td>-<%=@proteinEaten%> g</td>
+      <td>-<%=@proteinEaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
     <%if @fatsEaten%>
-      <td>-<%=@fatsEaten%> g</td>
+      <td>-<%=@fatsEaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
     <%if @carbsEaten%>
-      <td>-<%=@carbsEaten%> g</td>
+      <td>-<%=@carbsEaten%>g</td>
     <%else%>
       <td>0</td>
     <%end%>
     
   </tr>
   <tr>
-    <th>Left</th>
+    <th>Remaining</th>
     <% if @calsLeft <= 0 %>
       <td class="neg-macro"> <%=@calsLeft%>cal </td>
     <%else%>
