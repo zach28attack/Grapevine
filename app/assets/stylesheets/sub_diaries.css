@@ -1,0 +1,40 @@
+.sub-diary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 20px;
+  
+}
+.sub-diary {
+  border-collapse: collapse;
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
+}
+.sub-diary th {
+  background-color: #633aaa;
+  color: #fff;
+  height: 36px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 9%;
+}
+.sub-diary thead th:nth-child(1){
+  border-top-left-radius: 20px;
+}
+.sub-diary thead th:nth-child(2){
+  border-left: 1px solid #633aaa;
+  border-top-right-radius: 20px;
+}
+.sub-diary tbody tr.last-row td:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.sub-diary td {
+  height: 24PX;
+  padding-left: 10%;
+}
+.sub-diary tbody tr:nth-child(even) {
+  background-color: #80ccffca;
+}
+.sub-diary tbody tr:nth-child(odd) {
+  background-color: #80ccff95;}

@@ -1,0 +1,50 @@
+.form-box {
+  display: grid;
+}
+.food-input {
+  width: fit-content;
+}
+.title {
+  text-align: center;
+}
+.meal-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.meal-card{
+  grid-column: 2 / 3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.meal-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 38px;
+}
+.meal-name {
+  align-self: flex-start;
+  
+}
+.meal-macros {
+  align-self: flex-end;
+  margin-right: 20px;
+  
+}
+.meal-sum {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  display: flex;
+  align-self: flex-end;
+  margin-left: 10px;
+}
+.meal-sum-title {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+.food-list {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
