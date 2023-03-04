@@ -12,7 +12,7 @@ class Diary < ApplicationRecord
     elsif self.food_id 
       Food.find(self.food_id).food_name 
     else
-      "Calories:#{self.calories_eaten}"
+      "Custom add"
     end
   end
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
