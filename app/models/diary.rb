@@ -11,6 +11,8 @@ class Diary < ApplicationRecord
      Meal.find(self.meal_id).meal_name 
     elsif self.food_id 
       Food.find(self.food_id).food_name 
+    else
+      "Calories:#{self.calories_eaten}"
     end
   end
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
