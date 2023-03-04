@@ -54,52 +54,47 @@
  */
 /* 
  */
+.sub-diary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 36px;
+  
+}
+.sub-diary {
+  border-collapse: collapse;
+}
+.sub-diary th {
+  border: 1px solid;
+  border-collapse: collapse;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 36px;
+  font-size: 20px;
+  align-items: end;
+}
+.sub-diary td {
+  border: solid 1px;
+}
+/* 
+ */
+ /* 
+  */
 .form-box {
   display: grid;
 }
 .food-input {
   width: fit-content;
 }
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
-}
+
 
 .title {
   text-align: center;
 }
 
 
-.sub-list {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.sub-card {
-  border: solid;
-  margin: 10px;
-  height: 10em;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-}
-.sub-card-food {
-  border: solid;
-  flex: 0 0 60%;
-  width: 20em;
-  margin: 12px;
-}
-.sub-card-link {
-  align-self: flex-end;
-  justify-self: flex-end;
-  
-}
 .meal-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
