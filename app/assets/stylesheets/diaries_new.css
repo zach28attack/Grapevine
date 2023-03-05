@@ -8,7 +8,8 @@
   width: 350px;
   height: 350px;
   margin: 20px;
-  background-color: #6e48b0;
+  background-color: #67baf1ca;
+  border: solid #6e48b0;
   border-radius: 10px;
   box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .1);  padding: 10px;
 }
@@ -17,7 +18,7 @@
   font-size: 20px;
 }
 .diary-form{
-  color: #80ccffca;
+  color: #6e48b0;
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -37,7 +38,8 @@
   
   width: 450px;
   margin: 20px;
-  background-color: #6e48b0;
+  background-color: #67baf1ca;
+  border: solid #6e48b0;
   border-radius: 10px;
   box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
   
@@ -48,7 +50,7 @@
 }
 .form-list{ 
   border-radius: 20px;
-  color: #80ccffca;
+  color: #6e48b0;
   padding: 15px;
   text-align: center;
 }
