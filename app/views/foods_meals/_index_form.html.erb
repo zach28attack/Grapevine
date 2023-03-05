@@ -1,9 +1,8 @@
 <p>Your meals</p>
-<table class="form-list">
-  <% @foods_meals.each do |foods_meal|%>
-    <% meal = Meal.find(foods_meal.meal_id)%>
-    <%= form_with model: @diary do |form| %>
-    
+<% @foods_meals.each do |foods_meal|%>
+  <% meal = Meal.find(foods_meal.meal_id)%>
+  <%= form_with model: @diary do |form| %>
+    <table class="form-list">
       <tr>
         <td><%= meal.meal_name %></td>
         <td><%= meal.foods.sum(:calories) %> Cals</td>
@@ -13,14 +12,12 @@
         <td><%= form.submit "Add meal" %></td>
         <td><%= link_to "Edit meal", new_foods_meal_path(id: foods_meal.meal_id) %></td>
       </tr>
-
-      <%= form.hidden_field :calories_eaten, value: meal.foods.sum(:calories) %>
-      <%= form.hidden_field :protein_eaten, value: meal.foods.sum(:protein) %>
-      <%= form.hidden_field :fats_eaten, value: meal.foods.sum(:fats) %>
-      <%= form.hidden_field :carbs_eaten, value: meal.foods.sum(:carbs) %>
-      <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
-      <%= form.hidden_field :meal_id, value: meal.id %>
-      
-    <%end%>
+    </table>
+    <%= form.hidden_field :calories_eaten, value: meal.foods.sum(:calories) %>
+    <%= form.hidden_field :protein_eaten, value: meal.foods.sum(:protein) %>
+    <%= form.hidden_field :fats_eaten, value: meal.foods.sum(:fats) %>
+    <%= form.hidden_field :carbs_eaten, value: meal.foods.sum(:carbs) %>
+    <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
+    <%= form.hidden_field :meal_id, value: meal.id %>
   <%end%>
-</table>
+<%end%>
