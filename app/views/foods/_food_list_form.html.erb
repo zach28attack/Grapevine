@@ -1,22 +1,22 @@
 <p>Your foods</p>
-<table class="form-list">
-  <% Food.all.each do |food| %>
-    <%= form_with(model: @diary, local: true) do |form| %>
-        <tr>
-          <td><%= food.food_name %></td>
-          <td><%= food.calories %>Cals</td>
-          <td><%= food.protein %>p</td>
-          <td><%= food.fats %>f</td>
-          <td><%= food.carbs %>c</td>
-          <td><%= form.submit "Add food" %></td>
-        </tr>
-        
-        <%= form.hidden_field :calories_eaten, value: food.calories %>
-        <%= form.hidden_field :protein_eaten, value: food.protein %>
-        <%= form.hidden_field :fats_eaten, value: food.fats %>
-        <%= form.hidden_field :carbs_eaten, value: food.carbs %>
-        <%= form.hidden_field :food_id, value: food.id %>
-        <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
-    <% end %>
+<% Food.all.each do |food| %>
+  <%= form_with(model: @diary, local: true) do |form| %>
+    <%= form.hidden_field :calories_eaten, value: food.calories %>
+    <%= form.hidden_field :protein_eaten, value: food.protein %>
+    <%= form.hidden_field :fats_eaten, value: food.fats %>
+    <%= form.hidden_field :carbs_eaten, value: food.carbs %>
+    <%= form.hidden_field :food_id, value: food.id %>
+    <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
+    <table class="form-list">
+      <tr>
+        <td><%= food.food_name %></td>
+        <td><%= food.calories %>Cals</td>
+        <td><%= food.protein %>p</td>
+        <td><%= food.fats %>f</td>
+        <td><%= food.carbs %>c</td>
+        <td><%= form.submit "Add food" %></td>
+      </tr>
+    </table>
   <% end %>
-</table>
+<% end %>
+
