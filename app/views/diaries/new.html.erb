@@ -7,10 +7,11 @@
     <%= render "meals/form" %>
   </div>
   <div class="form-group-2">
-    <%= render "foods/food_list_form" %><br/>
+    
     <%if @foods_meals && !@foods_meals.empty?%>
-      <%= render "foods_meals/index_form"%><br/>
+      <%= render "foods_meals/index_form"%>
     <%end%>
+    <%= render "foods/food_list_form" %>
   </div>
 </div>
 
