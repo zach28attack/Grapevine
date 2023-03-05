@@ -30,3 +30,14 @@ a:hover {
 a:active{
   color: #a071f1;
 }
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #80ccffca;
+  border: none;
+  color: white;
+  padding: 3px;
+  margin: auto;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 10px;
+}
