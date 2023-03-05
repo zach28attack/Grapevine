@@ -1,5 +1,5 @@
 class Meal < ApplicationRecord
-  validates :meal_name, presence: true, length:{minimum:2, maximum: 10}
+  validates :meal_name, presence: true, length:{minimum:2, maximum: 20}
 
   validates :meal_name, presence: true
   has_many :foods_meals

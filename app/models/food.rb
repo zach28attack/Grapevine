@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
-  validates :food_name, presence: true, length:{minimum:2, maximum: 10}
+  validates :food_name, presence: true, length:{minimum:2, maximum: 20}
   validates :calories, presence: true, length:{minimum:1, maximum:4}, numericality: { only_integer: true }
   validates :protein, presence: true, length:{minimum:1, maximum:4}, numericality: { only_integer: true }
   validates :fats, presence: true, length:{minimum:1, maximum:4}, numericality: { only_integer: true }
