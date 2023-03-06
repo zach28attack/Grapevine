@@ -10,7 +10,7 @@
         <td><%= meal.foods.sum(:fats) %>f</td>
         <td><%= meal.foods.sum(:carbs) %>c</td>
         <td><%= form.submit "Add meal" %></td>
-        <td><%= link_to "Edit", new_foods_meal_path(id: foods_meal.meal_id) %></td>
+        <td><%= link_to "Edit", new_foods_meal_path(id: foods_meal.meal_id), class: "button" %></td>
       </tr>
     </table>
     <%= form.hidden_field :calories_eaten, value: meal.foods.sum(:calories) %>

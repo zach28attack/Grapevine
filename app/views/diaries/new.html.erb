@@ -1,5 +1,7 @@
-<%= link_to "Cancel", diaries_path %><br/>
-  <%= link_to "add new food", new_food_path %>
+<div class="flex-container">
+  <%= link_to "Cancel", diaries_path, class: "button-link"%><br/>
+  <%= link_to "add new food", new_food_path , class: "button-link"%>
+</div>
 <div class= flex-container>
   <div class="form-group-1">
     <%= render "form" %><br/>
