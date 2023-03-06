@@ -1,6 +1,7 @@
 /* new meal and custom entry form */
 .flex-container{
   display: flex;
+  justify-content: center;
 }
 .form-group-1{
   display: flex;
@@ -11,18 +12,19 @@
   background-color: #67baf1ca;
   border: solid #6e48b0;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .1);  padding: 10px;
+  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .1);
 }
 .form-group-1 p{
   margin: auto;
   font-size: 20px;
+  color: #6e48b0;
 }
 .diary-form{
   color: #6e48b0;
   display: flex;
-  justify-content: center;
-  padding: 10px;
-
+  flex-direction: column;
+  padding: 10px; 
+  padding-right: 20px;
 }
 .field{
   display: flex;
@@ -41,16 +43,17 @@
   border: solid #6e48b0;
   border-radius: 10px;
   box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
-}
-.form-group-2 p{
-  margin: auto;
-  font-size: 20px;
+  color: #6e48b0;
 }
 .form-list{ 
   border-radius: 20px;
   color: #6e48b0;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
+}
+.form-group-2 h2{ 
+  padding-top: 10px;
+  padding-left: 10px;
 }
 .button-link {
   display: inline-block;
