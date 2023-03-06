@@ -8,8 +8,9 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.user_id = current_user.id
     if @food.save
-      redirect_to new_diary_path
+      redirect_to diaries_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +30,7 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    redirect_to foods_path
+    redirect_to diaries_path
   end
 
   private
