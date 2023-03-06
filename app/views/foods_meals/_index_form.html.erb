@@ -1,4 +1,3 @@
-<p>Your meals</p>
 <% @foods_meals.each do |foods_meal|%>
   <% meal = Meal.find(foods_meal.meal_id)%>
   <%= form_with model: @diary do |form| %>

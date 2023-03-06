@@ -1,4 +1,4 @@
-<p>Your foods</p>
+
 <% Food.all.each do |food| %>
   <%= form_with(model: @diary, local: true) do |form| %>
     <%= form.hidden_field :calories_eaten, value: food.calories %>
