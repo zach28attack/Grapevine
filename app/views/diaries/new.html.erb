@@ -2,17 +2,20 @@
   <%= link_to "Cancel", diaries_path, class: "button-link"%><br/>
   <%= link_to "add new food", new_food_path , class: "button-link"%>
 </div>
+
 <div class= flex-container>
   <div class="form-group-1">
     <%= render "form" %><br/>
-    <p>- or -</p><br/>
+    <p>- create new meal -</p><br/>
     <%= render "meals/form" %>
   </div>
+
   <div class="form-group-2">
-    
     <%if @foods_meals && !@foods_meals.empty?%>
+      <h2>Your meals</h2>
       <%= render "foods_meals/index_form"%>
     <%end%>
+    <h2>Your foods</h2>
     <%= render "foods/food_list_form" %>
   </div>
 </div>
