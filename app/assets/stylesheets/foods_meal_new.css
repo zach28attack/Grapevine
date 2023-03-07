@@ -1,0 +1,30 @@
+/* Color Scheme
+  #80ccffca blue
+  #633aaa purple
+*/
+.meal-card-header {
+  color:#633aaa;
+  display: flex;
+  justify-content: space-between;
+}
+.meal-sum {
+  padding-right: 15px;
+}
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: dotted #633aaa;
+  border-top: dotted #633aaa;
+  font-size: 20px;
+  padding-bottom: 16px;
+  padding-top: 10px;
+}
+.meal-macros {
+  font-style: italic;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.meal-card-food-header {
+  padding: 10px 12px;
+}
