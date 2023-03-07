@@ -23,18 +23,7 @@
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
-a:link{
-  color: #a071f1;
-}
-a:visited {
-  color: #a071f1;
-}
-a:hover {
-  color: #a071f1;
-}
-a:active{
-  color: #a071f1;
-}
+
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #6e48b0;
   border: none;
