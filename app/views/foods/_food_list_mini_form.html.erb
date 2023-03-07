@@ -1,12 +1,16 @@
-<div class="food-list">
-  <hr>
-  <% Food.all.each do |food| %>
-    <%= form_with(model: @foodsMeal, local: true) do |form| %>
-      <%= food.food_name %>
-      <%= food.calories %>
-      <%= form.hidden_field :food_id, value: food.id %>
-      <%= form.hidden_field :meal_id, value: @meal.id %>
-      <%= form.submit "Add food" %>
+<div class="meal-card">
+  <h3 class="meal-card-food-header">Your foods</h3>
+  <ul>
+    <% Food.all.each do |food| %>
+      <%= form_with(model: @foodsMeal, local: true) do |form| %>
+        <li>
+        <%= food.food_name %>
+        <%= food.calories %>
+        <%= form.hidden_field :food_id, value: food.id %>
+        <%= form.hidden_field :meal_id, value: @meal.id %>
+        <%= form.submit "Add food" %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
+  </ul>
 </div>
