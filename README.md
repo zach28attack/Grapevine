@@ -1,8 +1,8 @@
 features I plan to implement: 
 
-✓ Food tracking: Allow users to log the foods they eat, including information about calories, macronutrients (protein, fat, and carbohydrates).
+• Food tracking: Allow users to log the foods they eat, including information about calories, macronutrients (protein, fat, and carbohydrates).
 
-✓ Meal planning: Give users the ability to plan their meals in advance, either by selecting from a pre-populated list of meals or by creating their own custom meals.
+• Meal planning: Give users the ability to plan their meals in advance, either by selecting from a pre-populated list of meals or by creating their own custom meals.
 
 • Barcode scanning: Use a gem like "barby" or "barby-barcode" to allow users to scan the barcode of a packaged food item to automatically populate nutritional information.
 
