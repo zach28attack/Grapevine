@@ -1,7 +1,35 @@
+/* Color Scheme
+  #80ccffca blue
+  #633aaa purple
+*/
 .navbar{
   display: flex;
   gap: 10px;
   background-color: #633aaa;
-  height: 48px;
+}
+.nav{
+  display: flex;
   align-items: flex-end;
+  height: 48px;
+  padding-left: 10px;
+}
+.nav:link{
+  color: #fff;
+  text-decoration: none;
+}
+.nav:visited{
+  color: #fff;
+}
+.nav:hover{
+  color: #fff;
+}
+.nav:active{
+  color: rgba(255, 255, 255, 0.446);
+}
+.nav-brand{
+  font-size: 30px;
+}
+.nav-link{
+  padding-bottom: 5px;
+  padding-left: 20px;
 }

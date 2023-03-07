@@ -1,4 +1,12 @@
 <div class="navbar">
-<%= link_to "Grapevine", diaries_path %>
-<%= link_to "profile", user_path(current_user) %>
+<%= link_to "Grapevine", diaries_path, class:"nav nav-brand" %>
+<% if user_signed_in?%>
+  <%= link_to "Profile", user_path(current_user), class:"nav nav-link" %>
+  <%= link_to "Social", diaries_path, class:"nav nav-link" %>
+  <%= link_to "Stats", diaries_path, class:"nav nav-link"%>
+  <%= link_to "Logout",
+              destroy_user_session_path,
+              data: {turbo_method: :delete},
+              class: "nav nav-link" %>
+<%end%>
 </div>
