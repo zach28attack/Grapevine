@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th><%= time_of_day%></th>
-      <th colspan="5"><%="Total cals:" if sum > 0 %> <%= sum%></th>
+      <th colspan="5"><%="Total cals:" if sum > 0 %> <%=sum%></th>
     </tr>
   </thead>
   <tbody>
@@ -10,7 +10,7 @@
       <% diaries.each do |diary| %>
         <%if diary.calories_eaten > 0%>
           <tr>
-            <td class="diary-item"><%=diary.item_name %></td>
+            <td class="diary-item"><%=diary.item_name%></td>
             <td class="macros"><%="protein. #{diary.protein_eaten}gs"%></td>
             <td class="macros"><%="fats. #{diary.fats_eaten}gs"%></td>
             <td class="macros"><%="carbs. #{diary.carbs_eaten}gs" %></td>
