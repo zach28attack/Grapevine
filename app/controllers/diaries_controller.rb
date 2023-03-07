@@ -22,6 +22,10 @@ class DiariesController < ApplicationController
     @fats_left = current_user.fats_budget - @fats_eaten
     @carbs_left = current_user.carbs_budget - @carbs_eaten
     @diary = Diary.last
+    @sum = @diaries.sum(:calories_eaten)
+    @breakfast_diaries = @diaries.by_time_of_day("Breakfast")
+    @lunch_diaries = @diaries.by_time_of_day("Lunch")
+    @dinner_diaries = @diaries.by_time_of_day("Dinner")
   end
 
   def show

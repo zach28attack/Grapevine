@@ -1,16 +1,14 @@
 <div class="container-flex"><%= render "diet_summary" %></div>
 <div class="sub-diary-list">
-  <% breakfast_diaries = @diaries.by_time_of_day("Breakfast")%>
-  <% lunch_diaries = @diaries.by_time_of_day("Lunch") %>
-  <% dinner_diaries = @diaries.by_time_of_day("Dinner") %>
   
-  <%if breakfast_diaries%>
-    <%= render partial: "sub_diary", locals: {diaries: breakfast_diaries} %>
+  
+  <%if @breakfast_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: @breakfast_diaries, time_of_day: @breakfast_diaries.last.time_of_day, sum: @breakfast_diaries.sum(:calories_eaten)} %>
   <%end%>
-  <%if lunch_diaries%>
-    <%= render partial: "sub_diary", locals: {diaries: lunch_diaries } %>
+  <%if @lunch_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: @lunch_diaries, time_of_day: @lunch_diaries.last.time_of_day, sum: @lunch_diaries.sum(:calories_eaten)}  %>
   <%end%>
-  <%if dinner_diaries%>
-    <%= render partial: "sub_diary", locals: {diaries: dinner_diaries } %>
+  <%if @dinner_diaries%>
+    <%= render partial: "sub_diary", locals: {diaries: @dinner_diaries, time_of_day: @lunch_diaries.last.time_of_day, sum: @lunch_diaries.sum(:calories_eaten)}  %>
   <%end%>
 </div>

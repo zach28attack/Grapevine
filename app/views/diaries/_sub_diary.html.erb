@@ -1,9 +1,8 @@
-<%time_of_day = diaries.last.time_of_day%>
 <table class="sub-diary">
   <thead>
     <tr>
       <th><%= time_of_day%></th>
-      <th colspan="5">Total calories: <%= sum = diaries.sum(:calories_eaten)%></th>
+      <th colspan="5"><%="Total cals:" if sum > 0 %> <%= sum%></th>
     </tr>
   </thead>
   <tbody>
