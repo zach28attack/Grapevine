@@ -3,27 +3,27 @@
   <%= form_with(model: @diary, local: true) do |form| %>
     <%= render partial: "shared/errors", locals:{obj: @diary} %>
 
-    <div class="field">
+    <div class="diary-field">
       <%= form.label :calories_eaten %>
       <%= form.text_field :calories_eaten %>
     </div>
 
-    <div class="field">
+    <div class="diary-field">
       <%= form.label :protein_eaten %>
       <%= form.text_field :protein_eaten %>
     </div>
     
-    <div class="field">
+    <div class="diary-field">
       <%= form.label :fats_eaten %>
       <%= form.text_field :fats_eaten %>
     </div>
 
-    <div class="field">
+    <div class="diary-field">
       <%= form.label :carbs_eaten %>
       <%= form.text_field :carbs_eaten %>
     </div>
 
-    <div class="field">
+    <div class="diary-field">
       <%= form.hidden_field :time_of_day, value: params[:time_of_day] %>
     </div>
       <%= form.submit %>

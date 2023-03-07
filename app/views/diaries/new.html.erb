@@ -1,7 +1,3 @@
-<div class="flex-container">
-  <%= link_to "Cancel", diaries_path, class: "button-link"%><br/>
-  <%= link_to "add new food", new_food_path , class: "button-link"%>
-</div>
 
 <div class= flex-container>
   <div class="form-group-1">
@@ -15,7 +11,7 @@
       <h2>Your meals</h2>
       <%= render "foods_meals/index_form"%>
     <%end%>
-    <h2>Your foods</h2>
+    <h2>Your foods <%= link_to "Add new", new_food_path , class: "button-link"%></h2>
     <%= render "foods/food_list_form" %>
   </div>
 </div>
