@@ -1,4 +1,7 @@
 .navbar{
   display: flex;
   gap: 10px;
+  background-color: #633aaa;
+  height: 48px;
+  align-items: flex-end;
 }
