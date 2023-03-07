@@ -32,7 +32,7 @@
 }
 .sub-diary td {
   height: 24PX;
-  padding-right: 10%;
+  padding-right: 25px;
 }
 .sub-diary tbody tr:nth-child(even) {
   background-color: #80ccffca;
