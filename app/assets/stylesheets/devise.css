@@ -1,0 +1,22 @@
+/* #80ccffca blue
+   #633aaa purple
+*/
+.user-form{
+  background-color: #6e48b0 ;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 26px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  font-size: 26px;
+}
+.user-field {
+  font-size: 20px;
+}
+.user-button[type=button], .user-button[type=submit], .user-button[type=reset] {
+  font-size: 18px;
+  background-color: #80ccffca ;
+  color: #6e48b0;
+  padding: 5px 8px;
+}
