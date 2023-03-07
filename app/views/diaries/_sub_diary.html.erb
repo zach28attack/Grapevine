@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th><%= time_of_day%></th>
-      <th colspan="5"><%= sum = diaries.sum(:calories_eaten)%></th>
+      <th colspan="5">Total calories: <%= sum = diaries.sum(:calories_eaten)%></th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,7 @@
             <td class="macros"><%="protein. #{diary.protein_eaten}gs"%></td>
             <td class="macros"><%="fats. #{diary.fats_eaten}gs"%></td>
             <td class="macros"><%="carbs. #{diary.carbs_eaten}gs" %></td>
-            <td class="macros"><%= diary.calories_eaten %></td>
+            <td class="macros"><%= diary.calories_eaten %> Cals</td>
           </tr>
         <%end%>
       <%end%>
@@ -23,7 +23,7 @@
       <td colspan="5" class="diary-empty"><%="No #{time_of_day} logged"%></td>        
     <%end%>
     <tr  class="last-row">
-      <td colspan="5" class="link"><%= link_to "+Log #{time_of_day}", new_diary_path(time_of_day: time_of_day )%></td>
+      <td colspan="5"><%= link_to "+Log #{time_of_day}", new_diary_path(time_of_day: time_of_day ), class: "link"%></td>
     </tr>
   </tbody>
 </table>
