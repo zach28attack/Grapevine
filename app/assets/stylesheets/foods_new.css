@@ -26,3 +26,10 @@
 .food-button {
   display: flex;
 }
+.food-field{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 8px;
+  border-radius: 4px;
+}
