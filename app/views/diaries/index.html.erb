@@ -7,6 +7,6 @@
     <%= render partial: "sub_diary", locals: {diaries: @lunch_diaries, time_of_day: @lunch_diaries.last.time_of_day, sum: @lunch_diaries.sum(:calories_eaten)}  %>
   <%end%>
   <%if @dinner_diaries%>
-    <%= render partial: "sub_diary", locals: {diaries: @dinner_diaries, time_of_day: @lunch_diaries.last.time_of_day, sum: @lunch_diaries.sum(:calories_eaten)}  %>
+    <%= render partial: "sub_diary", locals: {diaries: @dinner_diaries, time_of_day: @dinner_diaries.last.time_of_day, sum: @lunch_diaries.sum(:calories_eaten)}  %>
   <%end%>
 </div>
