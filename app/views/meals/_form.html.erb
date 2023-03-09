@@ -2,6 +2,7 @@
   <%= form_with model: @meal do |f| %>
     Meal name
     <%= f.text_field :meal_name %>
+    <%= f.hidden_field :time_of_day, value: params[:time_of_day] %>
     <div class="form-btn">
       <%= f.submit "Create Meal"%>
     </div>  
