@@ -8,9 +8,9 @@
   background-color: #67baf1ca;
   border: solid #6e48b0;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .1);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
 }
-.food-form{
+.food-form {
   color: #6e48b0;
   padding: 10px;
   padding-right: 20px;
@@ -20,13 +20,15 @@
   width: 45%;
   padding-right: 50px;
 }
-.food-button[type=button], .food-button[type=submit], .food-button[type=reset] {
+.food-button[type="button"],
+.food-button[type="submit"],
+.food-button[type="reset"] {
   font-size: 15px;
 }
 .food-button {
   display: flex;
 }
-.food-field{
+.food-field {
   display: flex;
   justify-content: space-between;
   width: 100%;

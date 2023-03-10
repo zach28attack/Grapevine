@@ -9,7 +9,7 @@
 .sub-diary {
   border-collapse: collapse;
   border-radius: 20px;
-  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.08);
 }
 .sub-diary th {
   background-color: #633aaa;
@@ -19,10 +19,10 @@
   text-align: space-between;
   padding-right: 9%;
 }
-.sub-diary thead th:nth-child(1){
+.sub-diary thead th:nth-child(1) {
   border-top-left-radius: 20px;
 }
-.sub-diary thead th:nth-child(2){
+.sub-diary thead th:nth-child(2) {
   border-left: 1px solid #633aaa;
   border-top-right-radius: 20px;
 }
@@ -31,7 +31,7 @@
   border-bottom-right-radius: 20px;
 }
 .sub-diary td {
-  height: 24PX;
+  height: 24px;
   padding-right: 25px;
 }
 .sub-diary tbody tr:nth-child(even) {
@@ -40,17 +40,17 @@
 .sub-diary tbody tr:nth-child(odd) {
   background-color: #80ccff95;
 }
-.macros{
+.macros {
   font-size: 10px;
   font-style: italic;
 }
 .diary-item {
   padding-left: 10%;
 }
-.link{
+.link {
   padding-left: 40%;
   text-decoration: none;
 }
-.diary-empty{
+.diary-empty {
   text-align: center;
 }

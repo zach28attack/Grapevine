@@ -2,34 +2,34 @@
   #80ccffca blue
   #633aaa purple
 */
-.navbar{
+.navbar {
   display: flex;
   gap: 10px;
   background-color: #633aaa;
 }
-.nav{
+.nav {
   display: flex;
   align-items: flex-end;
   height: 48px;
   padding-left: 10px;
 }
-.nav:link{
+.nav:link {
   color: #fff;
   text-decoration: none;
 }
-.nav:visited{
+.nav:visited {
   color: #fff;
 }
-.nav:hover{
+.nav:hover {
   color: #fff;
 }
-.nav:active{
+.nav:active {
   color: rgba(255, 255, 255, 0.446);
 }
-.nav-brand{
+.nav-brand {
   font-size: 30px;
 }
-.nav-link{
+.nav-link {
   padding-bottom: 5px;
   padding-left: 20px;
 }

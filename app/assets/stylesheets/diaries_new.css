@@ -1,9 +1,9 @@
 /* new meal and custom entry form */
-.flex-container{
+.flex-container {
   display: flex;
   justify-content: center;
 }
-.form-group-1{
+.form-group-1 {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -12,21 +12,21 @@
   background-color: #67baf1ca;
   border: solid #6e48b0;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .1);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
 }
-.form-group-1 p{
+.form-group-1 p {
   margin: auto;
   font-size: 20px;
   color: #6e48b0;
 }
-.diary-form{
+.diary-form {
   color: #6e48b0;
   display: flex;
   flex-direction: column;
-  padding: 10px; 
+  padding: 10px;
   padding-right: 20px;
 }
-.diary-field{
+.diary-field {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -34,7 +34,7 @@
   border-radius: 4px;
 }
 /*Food and FoodsMeal list form*/
-.form-group-2{
+.form-group-2 {
   display: flex;
   flex-direction: column;
   width: 450px;
@@ -42,16 +42,16 @@
   background-color: #67baf1ca;
   border: solid #6e48b0;
   border-radius: 10px;
-  box-shadow: 0px 10px 10px 1px rgba( 0, 0, 0 , .08);
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.08);
   color: #6e48b0;
 }
-.form-list{ 
+.form-list {
   border-radius: 20px;
   color: #6e48b0;
   padding: 20px;
   text-align: center;
 }
-.form-group-2 h2{ 
+.form-group-2 h2 {
   padding-top: 10px;
   padding-left: 10px;
 }
@@ -75,15 +75,15 @@
   cursor: pointer;
   font-size: 10px;
 }
-.button:visited{
+.button:visited {
   color: #fff;
 }
-.button:link{
+.button:link {
   color: #fff;
 }
 .button:hover {
   color: #fff;
 }
-.button:active{
+.button:active {
   color: #fff;
 }

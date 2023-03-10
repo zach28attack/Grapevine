@@ -3,7 +3,7 @@
   #633aaa purple
 */
 .meal-card-header {
-  color:#633aaa;
+  color: #633aaa;
   display: flex;
   justify-content: space-between;
 }

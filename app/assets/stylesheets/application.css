@@ -18,13 +18,15 @@
   #80ccffca blue
   #633aaa purple
 */
- * {
+* {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
   background-color: #6e48b0;
   border: none;
   color: white;
