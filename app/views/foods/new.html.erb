@@ -1,5 +1,5 @@
 <%= render partial: 'shared/errors', locals:{ obj: @food } %>
-<%= link_to "Go back to Index", diaries_path %>
+<%= link_to "Go back to Index", new_diary_path(time_of_day: @time_of_day) %>
 <div class="flex-container">
   <%= render 'form' %>
 </div>

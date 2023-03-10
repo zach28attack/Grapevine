@@ -11,7 +11,8 @@
       <h2>Your meals</h2>
       <%= render "foods_meals/index_form"%>
     <%end%>
-    <h2>Your foods <%= link_to "Add new", new_food_path , class: "button-link"%></h2>
+    
+    <h2>Your foods <%= link_to "Add new", new_food_path(time_of_day: params[:time_of_day]) , class: "button-link"%></h2>
     <%= render "foods/food_list_form" %>
   </div>
 </div>
