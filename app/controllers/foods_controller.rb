@@ -8,19 +8,14 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = Food.new
-    food.food_name = food_params[:food_name]  
-    food.calories = food_params[:calories]  
-    food.protein = food_params[:protein]
-    food.fats = food_params[:fats]
-    food.carbs = food_params[:carbs]
-    food.servings = food_params[:servings]
-    food.user_id = current_user.id
-    if food.save
-      redirect_to new_diary_path(time_of_day: food_params[:time_of_day])
-    else
-      render :new, status: :unprocessable_entity
-    end
+     food_params_filtered = food_params.slice(:food_name, :calories, :protein, :fats, :carbs, :servings)
+  food = Food.new(food_params_filtered)
+  food.user_id = current_user.id
+  if food.save
+    redirect_to new_diary_path(time_of_day: food_params[:time_of_day])
+  else
+    render :new, status: :unprocessable_entity
+  end
   end
 
   def edit
