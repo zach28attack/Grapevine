@@ -7,9 +7,8 @@ def new
 end
 
 def create
-  foods_meal = FoodsMeal.new
-  foods_meal.food_id = foods_meal_params[:food_id]
-  foods_meal.meal_id = foods_meal_params[:meal_id]
+  foods_meal_params_filtered = foods_meal_params.slice(:food_id, :meal_id)
+  foods_meal = FoodsMeal.new(foods_meal_params_filtered)
   foods_meal.user_id = current_user.id
   if foods_meal.save
     redirect_to new_foods_meal_path(id: foods_meal.meal_id, time_of_day: foods_meal_params[:time_of_day])
