@@ -37,7 +37,6 @@
     <%else%>
       <td>0</td>
     <%end%>
-    
   </tr>
   <tr>
     <th>Remaining</th>
@@ -46,19 +45,16 @@
     <%else%>
       <td class="pos-macro"> <%=@cals_left%>cal </td>
     <%end%>
-
     <% if @protein_left <= 0%>
       <td class="neg-macro"><%=@protein_left%>g </td>
     <%else%>
       <td class="pos-macro"> <%=@protein_left%>g </td>
     <%end%>
-
     <% if @fats_left <= 0%>
       <td class="neg-macro"><%=@fats_left%>g </td>
     <%else%>
       <td class="pos-macro"> <%=@fats_left%>g </td>
     <%end%>
-
     <% if @carbs_left <= 0%>
       <td class="neg-macro"><%=@carbs_left%>g </td>
     <%else%>
@@ -71,4 +67,3 @@
   ["Protein" , @protein_eaten],
   ["Fats", @fats_eaten]
   ]%>
-

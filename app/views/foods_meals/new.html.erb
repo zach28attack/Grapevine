@@ -4,11 +4,10 @@
     <h2 class="meal-card-header">
       <%=@meal.meal_name%>
       <div class="meal-sum">
-      <%= "#{@meal.foods.sum(:calories)} Cals" %>
+        <%= "#{@meal.foods.sum(:calories)} Cals" %>
       </div>
     </h2>
     <%= render "added_foods_list" %>
-
     <%= render "foods/food_list_mini_form" %>
   </div>
 </div>

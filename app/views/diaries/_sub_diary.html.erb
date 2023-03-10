@@ -18,8 +18,8 @@
           </tr>
         <%end%>
       <%end%>
-    <%else%>  
-      <td colspan="5" class="diary-empty"><%="No #{time_of_day} logged"%></td>        
+    <%else%>
+      <td colspan="5" class="diary-empty"><%="No #{time_of_day} logged"%></td>
     <%end%>
     <tr  class="last-row">
       <td colspan="5"><%= link_to "+Log #{time_of_day}", new_diary_path(time_of_day: time_of_day ), class: "link"%></td>

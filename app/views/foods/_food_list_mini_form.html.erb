@@ -4,12 +4,12 @@
     <% Food.all.each do |food| %>
       <%= form_with(model: @foodsMeal, local: true) do |form| %>
         <li>
-        <%= food.food_name %>
-        <%= food.calories %>
-        <%= form.hidden_field :food_id, value: food.id %>
-        <%= form.hidden_field :meal_id, value: @meal.id %>
-        <%= form.hidden_field :time_of_day, value: @time_of_day %>
-        <%= form.submit "Add food" %>
+          <%= food.food_name %>
+          <%= food.calories %>
+          <%= form.hidden_field :food_id, value: food.id %>
+          <%= form.hidden_field :meal_id, value: @meal.id %>
+          <%= form.hidden_field :time_of_day, value: @time_of_day %>
+          <%= form.submit "Add food" %>
         </li>
       <% end %>
     <% end %>

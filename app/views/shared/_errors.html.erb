@@ -1,10 +1,9 @@
-<% if obj.errors.any? %>  
+<% if obj.errors.any? %>
   <h2><%= pluralize(obj.errors.count, "error") %> prohibited this <%= obj.class.name.downcase%> from being saved:</h2>
   <hr>
-  <ul>  
-    <% obj.errors.full_messages.each do |msg| %>  
-    <li><%= msg %></li>  
+  <ul>
+    <% obj.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
   </ul>
-  
 <%end%>  
