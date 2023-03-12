@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  food = Food.first_or_create(food_name: "eggs", calories: 70, protein: 23, fats: 10, carbs: 0, servings: 1)
+  user = User.first_or_create(name: "Zach", email: "test@testing.com", password: 121212, cals_budget:2000, protein_budget: 200, fats_budget: 200, carbs_budget:100)
+  food = Food.first_or_create(food_name: "eggs", calories: 70, protein: 23, fats: 10, carbs: 0, servings: 1, user: user)
   
   context "when creating a valid food" do
     it "should be valid" do

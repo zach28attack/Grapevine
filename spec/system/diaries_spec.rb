@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Diaries", type: :system do
   let!(:user) { FactoryBot.create(:user) }
-  let(:food) { FactoryBot.create(:food) }
+  let(:food) { FactoryBot.create(:food, user: user) }
   let(:meal) { FactoryBot.create(:meal) }
   let(:foods_meal) { FactoryBot.create(:foods_meal, user: user, food_id: food.id, meal_id: meal.id) }
   let!(:diary) { FactoryBot.create(:diary, user: user, time_of_day: "Breakfast") }

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "FoodsMeals", type: :system do
   let!(:user) { FactoryBot.create(:user) }
-  let(:food) { FactoryBot.create(:food) }
+  let(:food) { FactoryBot.create(:food, user: user) }
   let(:meal) { FactoryBot.create(:meal) }
 
   before do

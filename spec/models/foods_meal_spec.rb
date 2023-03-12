@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe FoodsMeal, type: :model do
   let!(:user) { FactoryBot.create(:user) }
   let!(:meal) { FactoryBot.create(:meal) }
-  let!(:food) { FactoryBot.create(:food) }
+  let!(:food) { FactoryBot.create(:food, user: user) }
   let!(:foods_meal) { FactoryBot.create(:foods_meal, user: user) }
   
   context "with nil :meal_id" do
